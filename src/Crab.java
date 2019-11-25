@@ -62,28 +62,6 @@ public class Crab extends TraversingEntity {
 
     private Point nextPosition(WorldModel world, Point destPos)
     {
-//        int horiz = Integer.signum(destPos.getX() - this.getPosition().getX());
-//        Point newPos = new Point(this.getPosition().getX() + horiz,
-//                this.getPosition().getY());
-//
-//        Optional<Entity> occupant = world.getOccupant(newPos);
-//
-//        if (horiz == 0 ||
-//                (occupant.isPresent() && !(occupant.get() instanceof Fish)))
-//        {
-//            int vert = Integer.signum(destPos.getY() - this.getPosition().getY());
-//            newPos = new Point(this.getPosition().getX(), this.getPosition().getY() + vert);
-//            occupant = world.getOccupant(newPos);
-//
-//            if (vert == 0 ||
-//                    (occupant.isPresent() && !(occupant.get() instanceof Fish)))
-//            {
-//                newPos = this.getPosition();
-//            }
-//        }
-//
-//        return newPos;
-
         PathingStrategy aStar = new AStarPathingStrategy();
 
         List<Point> path = aStar.computePath(getPosition(), destPos, p -> (!world.isOccupied(p) && world.withinBounds(p)), Point::adjacent, PathingStrategy.CARDINAL_NEIGHBORS);

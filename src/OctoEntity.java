@@ -11,24 +11,6 @@ public abstract class OctoEntity extends TraversingEntity{
 
     public Point nextPositionOcto(WorldModel world,  Point destPos)
     {
-//        int horiz = Integer.signum(destPos.getX() - this.getPosition().getX());
-//        Point newPos = new Point(this.getPosition().getX() + horiz,
-//                this.getPosition().getY());
-//
-//        if (horiz == 0 || world.isOccupied(newPos))
-//        {
-//            int vert = Integer.signum(destPos.getY() - this.getPosition().getY());
-//            newPos = new Point(this.getPosition().getX(),
-//                    this.getPosition().getY() + vert);
-//
-//            if (vert == 0 || world.isOccupied(newPos))
-//            {
-//                newPos = this.getPosition();
-//            }
-//        }
-//
-//        return newPos;
-
         PathingStrategy aStar = new AStarPathingStrategy();
 
         List<Point> path = aStar.computePath(getPosition(), destPos, p -> (!world.isOccupied(p) && world.withinBounds(p)), Point::adjacent, PathingStrategy.CARDINAL_NEIGHBORS);
