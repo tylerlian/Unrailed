@@ -24,7 +24,7 @@ public class OctoNotFull extends OctoEntity{
          "fish");
 
       if (!notFullTarget.isPresent() ||
-         !this.moveTo(world, notFullTarget.get(), scheduler) ||
+//         !this.moveTo(world, notFullTarget.get(), scheduler) ||
          !this.transform(world, scheduler, imageStore))
       {
          scheduler.scheduleEvent(this,
@@ -33,33 +33,33 @@ public class OctoNotFull extends OctoEntity{
       }
    }
 
-    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
-    {
-        if (this.getPosition().adjacent(target.getPosition()))
-        {
-            this.resourceCount += 1;
-            world.removeEntity(target);
-            scheduler.unscheduleAllEvents(target);
-            return true;
-        }
-//        return false;
-        else
-        {
-            Point nextPos = this.nextPositionOcto(world, target.getPosition());
+//    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
+//    {
+//        if (this.getPosition().adjacent(target.getPosition()))
+//        {
+//            this.resourceCount += 1;
+//            world.removeEntity(target);
+//            scheduler.unscheduleAllEvents(target);
+//            return true;
+//        }
+////        return false;
+//        else
+//        {
+//            Point nextPos = this.nextPositionOcto(world, target.getPosition());
+////
+//            if (!this.getPosition().equals(nextPos))
+//            {
+//                Optional<Entity> occupant = world.getOccupant(nextPos);
+//                if (occupant.isPresent())
+//                {
+//                    scheduler.unscheduleAllEvents(occupant.get());
+//                }
 //
-            if (!this.getPosition().equals(nextPos))
-            {
-                Optional<Entity> occupant = world.getOccupant(nextPos);
-                if (occupant.isPresent())
-                {
-                    scheduler.unscheduleAllEvents(occupant.get());
-                }
-
-                world.moveEntity(this, nextPos);
-            }
-            return false;
-        }
-    }
+//                world.moveEntity(this, nextPos);
+//            }
+//            return false;
+//        }
+//    }
 
 
     public boolean transform(WorldModel world, EventScheduler scheduler, ImageStore imageStore)

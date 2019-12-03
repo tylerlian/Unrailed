@@ -91,37 +91,47 @@ public final class VirtualWorld
 
    public void keyPressed()
    {
-//      int x = 0;
-//      int y = 0;
-//      if (key == CODED)
-//      {
-//         int dx = 0;
-//         int dy = 0;
-//
-//         switch (keyCode)
-//         {
-//            case UP:
-//               dy = -1;
-//               break;
-//            case DOWN:
-//               dy = 1;
-//               break;
-//            case LEFT:
-//               dx = -1;
-//               break;
-//            case RIGHT:
-//               dx = 1;
-//               break;
-//         }
-//         Point current = octo.getPosition();
-//         if(dx != 0){
-//            x = current.getX() + dx;
-//         } else if (dy != 0){
-//            y = current.getY() + dy;
-//         }
-//         octo.nextPositionOcto(world, new Point(x, y));
-//      }
+      int x = 0;
+      int y = 0;
+      if (key == CODED)
+      {
+         int dx = 0;
+         int dy = 0;
+
+         switch (keyCode)
+         {
+            case UP:
+               dy = -1;
+               break;
+            case DOWN:
+               dy = 1;
+               break;
+            case LEFT:
+               dx = -1;
+               break;
+            case RIGHT:
+               dx = 1;
+               break;
+         }
+         Point current = octo.getPosition();
+         if(dx != 0){
+            x = current.getX() + dx;
+         } else if (dy != 0){
+            y = current.getY() + dy;
+         }
+         world.moveEntity(octo, new Point(x,y));
+      }
    }
+
+   public void mousePressed() {
+      if(!world.isOccupied(getPressedPoint())){
+         OctoNotFull octo = imageStore.createOctoNotFull("octo", 0, getPressedPoint(), 0, 0, imageStore.getImageList("octo"));
+         world.addEntity(octo);
+         (octo).scheduleActions(scheduler, world, imageStore);
+      }
+   }
+
+   private Point getPressedPoint(){return new Point(mouseX/TILE_WIDTH , mouseY/TILE_HEIGHT);}
 
    private static Background createDefaultBackground(ImageStore imageStore)
    {

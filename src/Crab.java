@@ -12,7 +12,7 @@ public class Crab extends TraversingEntity {
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         Optional<Entity> crabTarget = world.findNearest(
-            this.getPosition(), "seaGrass");
+            this.getPosition(), "octo");
         long nextPeriod = this.getActionPeriod();
 
         if (crabTarget.isPresent())
