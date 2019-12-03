@@ -1,5 +1,4 @@
 octo octo_6_3 6 3 2 813 100
-octo octo_5_6 5 6 2 992 100
 seaGrass seaGrass_7_11 7 11 9377
 seaGrass seaGrass_8_11 8 11 13146
 seaGrass seaGrass_6_11 6 11 15026
@@ -40,19 +39,8 @@ obstacle obstacle_13_22 13 22
 obstacle obstacle_14_23 14 23
 obstacle obstacle_14_24 14 24
 obstacle obstacle_11_21 11 21
-octo octo_12_23 12 23 2 954 100
 seaGrass seaGrass_14_22 14 22 8248
 seaGrass seaGrass_10_25 10 25 8366
-octo octo_6_25 6 25 2 930 100
-octo octo_17_22 17 22 2 982 100
-octo octo_7_13 7 13 2 913 100
-octo octo_23_6 23 6 2 777 100
-octo octo_37_6 37 6 2 991 100
-octo octo_37_10 37 10 2 600 100
-octo octo_37_18 37 18 2 888 100
-octo octo_31_15 31 15 2 933 100
-octo octo_31_26 31 26 2 734 100
-octo octo_24_26 24 26 2 851 100
 obstacle obstacle_27_25 27 25
 obstacle obstacle_28_25 28 25
 obstacle obstacle_29_26 29 26

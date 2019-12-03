@@ -2,6 +2,8 @@ import processing.core.PImage;
 
 import java.util.List;
 
+import static processing.core.PConstants.CODED;
+
 public abstract class OctoEntity extends TraversingEntity{
 
     public OctoEntity(String id, Point position,
@@ -22,6 +24,8 @@ public abstract class OctoEntity extends TraversingEntity{
             path.remove(0);
             return next;
         }
+//        return destPos;
+
 
     }
 

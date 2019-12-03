@@ -11,17 +11,16 @@ public class Fish extends ImmobileEntity{
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         Point pos = this.getPosition();  // store current position before removing
 
-      world.removeEntity(this);
-      scheduler.unscheduleAllEvents(this);
+        world.removeEntity(this);
+        scheduler.unscheduleAllEvents(this);
 
-      AnimationEntity crab = imageStore.createCrab(this.getId() + " -- crab",
-              pos, this.getActionPeriod() / 4,
-              50 +
-                      (new Random()).nextInt(150 - 50),
-              imageStore.getImageList("crab"));
+        AnimationEntity crab = imageStore.createCrab(this.getId() + " -- crab",
+                pos, this.getActionPeriod() / 4, 50 +
+                        (new Random()).nextInt(150 - 50),
+                  imageStore.getImageList("crab"));
 
-      world.addEntity((Entity) crab);
-      crab.scheduleActions(scheduler, world, imageStore);
+          world.addEntity((Entity) crab);
+          crab.scheduleActions(scheduler, world, imageStore);
     }
 
 }

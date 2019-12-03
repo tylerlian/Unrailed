@@ -42,10 +42,11 @@ public class OctoNotFull extends OctoEntity{
             scheduler.unscheduleAllEvents(target);
             return true;
         }
+//        return false;
         else
         {
             Point nextPos = this.nextPositionOcto(world, target.getPosition());
-
+//
             if (!this.getPosition().equals(nextPos))
             {
                 Optional<Entity> occupant = world.getOccupant(nextPos);

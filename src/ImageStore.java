@@ -147,10 +147,10 @@ final class ImageStore
    {
       return new Crab(id, position, images, actionPeriod, animationPeriod);
    }
-   public Atlantis createAtlantis(String id, Point position,
+   public AtlantisFull createAtlantis(String id, Point position,
                                   List<PImage> images)
    {
-      return new Atlantis(id, position, images, 0, 0, 0, 0);
+      return new AtlantisFull(id, position, images, 0, 0, 0, 0);
    }
 
    public OctoFull createOctoFull(String id, int resourceLimit,

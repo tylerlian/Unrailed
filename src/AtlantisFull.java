@@ -1,9 +1,9 @@
 import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
-public class Atlantis extends AbstractAnimationEntity{
+public class AtlantisFull extends AbstractAnimationEntity{
 
-    public Atlantis(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod, int resourceCount, int resourceLimit){
+    public AtlantisFull(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod, int resourceCount, int resourceLimit){
         super(id, position, images, "atlantis", actionPeriod, animationPeriod);
     }
 

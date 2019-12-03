@@ -46,6 +46,7 @@ public final class VirtualWorld
    private ImageStore imageStore;
    private WorldModel world;
    private WorldView view;
+   private OctoEntity octo;
    private EventScheduler scheduler;
 
    private long next_time;
@@ -90,28 +91,36 @@ public final class VirtualWorld
 
    public void keyPressed()
    {
-      if (key == CODED)
-      {
-         int dx = 0;
-         int dy = 0;
-
-         switch (keyCode)
-         {
-            case UP:
-               dy = -1;
-               break;
-            case DOWN:
-               dy = 1;
-               break;
-            case LEFT:
-               dx = -1;
-               break;
-            case RIGHT:
-               dx = 1;
-               break;
-         }
-         view.shiftView(dx, dy);
-      }
+//      int x = 0;
+//      int y = 0;
+//      if (key == CODED)
+//      {
+//         int dx = 0;
+//         int dy = 0;
+//
+//         switch (keyCode)
+//         {
+//            case UP:
+//               dy = -1;
+//               break;
+//            case DOWN:
+//               dy = 1;
+//               break;
+//            case LEFT:
+//               dx = -1;
+//               break;
+//            case RIGHT:
+//               dx = 1;
+//               break;
+//         }
+//         Point current = octo.getPosition();
+//         if(dx != 0){
+//            x = current.getX() + dx;
+//         } else if (dy != 0){
+//            y = current.getY() + dy;
+//         }
+//         octo.nextPositionOcto(world, new Point(x, y));
+//      }
    }
 
    private static Background createDefaultBackground(ImageStore imageStore)
