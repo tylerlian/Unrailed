@@ -19,8 +19,9 @@ public class OctoFull extends OctoEntity {
     {
         Optional<Entity> fullTarget = world.findNearest(this.getPosition(), "atlantis");
 
-        if (fullTarget.isPresent() &&
-                this.moveTo(world, fullTarget.get(), scheduler))
+        if (fullTarget.isPresent())
+//                &&
+//                this.moveTo(world, fullTarget.get(), scheduler))
         {
             //at atlantis trigger animation
             ((ActivityEntity)fullTarget.get()).scheduleActions(scheduler, world, imageStore);
@@ -36,30 +37,30 @@ public class OctoFull extends OctoEntity {
         }
     }
 
-    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
-   {
-      if (this.getPosition().adjacent(target.getPosition()))
-      {
-         return true;
-      }
-      else
-      {
-         Point nextPos = this.nextPositionOcto( world, target.getPosition());
-
-         if (!this.getPosition().equals(nextPos))
-         {
-            Optional<Entity> occupant = world.getOccupant(nextPos);
-
-            if (occupant.isPresent())
-            {
-               scheduler.unscheduleAllEvents(occupant.get());
-            }
-
-            world.moveEntity(this, nextPos);
-         }
-         return false;
-      }
-   }
+//    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
+//   {
+//      if (this.getPosition().adjacent(target.getPosition()))
+//      {
+//         return true;
+//      }
+//      else
+//      {
+//         Point nextPos = this.nextPositionOcto( world, target.getPosition());
+//
+//         if (!this.getPosition().equals(nextPos))
+//         {
+//            Optional<Entity> occupant = world.getOccupant(nextPos);
+//
+//            if (occupant.isPresent())
+//            {
+//               scheduler.unscheduleAllEvents(occupant.get());
+//            }
+//
+//            world.moveEntity(this, nextPos);
+//         }
+//         return false;
+//      }
+//   }
 
     public void transformFull(WorldModel world, EventScheduler scheduler, ImageStore imageStore)
     {

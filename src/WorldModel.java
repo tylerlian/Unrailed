@@ -133,8 +133,8 @@ final class WorldModel
          {
             case BGND_KEY:
                return this.parseBackground(properties, imageStore);
-            case OCTO_KEY:
-               return this.parseOcto(properties, imageStore);
+//            case OCTO_KEY:
+//               return this.parseOcto(properties, imageStore);
             case OBSTACLE_KEY:
                return this.parseObstacle(properties,imageStore);
             case FISH_KEY:
@@ -164,23 +164,23 @@ final class WorldModel
       return properties.length == BGND_NUM_PROPERTIES;
    }
 
-   private boolean parseOcto(String[] properties,
-                             ImageStore imageStore)
-   {
-      if (properties.length == OCTO_NUM_PROPERTIES)
-      {
-         Point pt = new Point(Integer.parseInt(properties[OCTO_COL]),
-                 Integer.parseInt(properties[OCTO_ROW]));
-         Entity entity = imageStore.createOctoNotFull(properties[OCTO_ID],
-                 Integer.parseInt(properties[OCTO_LIMIT]), pt,
-                 Integer.parseInt(properties[OCTO_ACTION_PERIOD]),
-                 Integer.parseInt(properties[OCTO_ANIMATION_PERIOD]),
-                imageStore. getImageList( OCTO_KEY));
-         this.tryAddEntity(entity);
-      }
-
-      return properties.length == OCTO_NUM_PROPERTIES;
-   }
+//   private boolean parseOcto(String[] properties,
+//                             ImageStore imageStore)
+//   {
+//      if (properties.length == OCTO_NUM_PROPERTIES)
+//      {
+//         Point pt = new Point(Integer.parseInt(properties[OCTO_COL]),
+//                 Integer.parseInt(properties[OCTO_ROW]));
+//         Entity entity = imageStore.createOctoNotFull(properties[OCTO_ID],
+//                 Integer.parseInt(properties[OCTO_LIMIT]), pt,
+//                 Integer.parseInt(properties[OCTO_ACTION_PERIOD]),
+//                 Integer.parseInt(properties[OCTO_ANIMATION_PERIOD]),
+//                imageStore. getImageList( OCTO_KEY));
+//         this.tryAddEntity(entity);
+//      }
+//
+//      return properties.length == OCTO_NUM_PROPERTIES;
+//   }
 
    private boolean parseObstacle(String[] properties,
                                  ImageStore imageStore)

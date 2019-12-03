@@ -1,7 +1,10 @@
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import processing.core.*;
+
+import static java.awt.event.KeyEvent.*;
 
 
 /*
@@ -46,7 +49,7 @@ public final class VirtualWorld
    private ImageStore imageStore;
    private WorldModel world;
    private WorldView view;
-   private OctoEntity octo;
+   private static PlayerEntity player;
    private EventScheduler scheduler;
 
    private long next_time;
@@ -91,8 +94,6 @@ public final class VirtualWorld
 
    public void keyPressed()
    {
-      int x = 0;
-      int y = 0;
       if (key == CODED)
       {
          int dx = 0;
@@ -112,26 +113,23 @@ public final class VirtualWorld
             case RIGHT:
                dx = 1;
                break;
+            case VK_W:
+               dy = -1;
+               break;
+            case VK_S:
+               dy = 1;
+               break;
+            case VK_A:
+               dx = -1;
+               break;
+            case VK_D:
+               dx = 1;
+               break;
+
          }
-         Point current = octo.getPosition();
-         if(dx != 0){
-            x = current.getX() + dx;
-         } else if (dy != 0){
-            y = current.getY() + dy;
-         }
-         world.moveEntity(octo, new Point(x,y));
+         player.move(world, dx, dy);
       }
    }
-
-   public void mousePressed() {
-      if(!world.isOccupied(getPressedPoint())){
-         OctoNotFull octo = imageStore.createOctoNotFull("octo", 0, getPressedPoint(), 0, 0, imageStore.getImageList("octo"));
-         world.addEntity(octo);
-         (octo).scheduleActions(scheduler, world, imageStore);
-      }
-   }
-
-   private Point getPressedPoint(){return new Point(mouseX/TILE_WIDTH , mouseY/TILE_HEIGHT);}
 
    private static Background createDefaultBackground(ImageStore imageStore)
    {
@@ -172,6 +170,9 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
+         PlayerEntity player = new PlayerEntity("Player", new Point(0,0),  imageStore.getImageList("octo"), "octo", 0, 10);
+         VirtualWorld.player = player;
+         world.addEntity(player);
       }
       catch (FileNotFoundException e)
       {

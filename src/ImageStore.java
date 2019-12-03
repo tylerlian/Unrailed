@@ -153,21 +153,21 @@ final class ImageStore
       return new AtlantisFull(id, position, images, 0, 0, 0, 0);
    }
 
-   public OctoFull createOctoFull(String id, int resourceLimit,
+   public PlayerEntity createPlayer(String id, int resourceLimit,
                                   Point position, int actionPeriod, int animationPeriod,
                                   List<PImage> images)
    {
-      return new OctoFull(id, position, images,
-              resourceLimit, resourceLimit, actionPeriod, animationPeriod);
+      return new PlayerEntity(id, position, images,
+              "octo", 5, 1);
    }
 
-   public OctoNotFull createOctoNotFull(String id, int resourceLimit, Point position,
-                                        int actionPeriod, int animationPeriod,
-                                        List<PImage> images)
-   {
-      return new OctoNotFull(id,position, images,
-              resourceLimit, 0, actionPeriod, animationPeriod);
-   }
+//   public OctoNotFull createOctoNotFull(String id, int resourceLimit, Point position,
+//                                        int actionPeriod, int animationPeriod,
+//                                        List<PImage> images)
+//   {
+//      return new OctoNotFull(id,position, images,
+//              resourceLimit, 0, actionPeriod, animationPeriod);
+//   }
 
    public Obstacle createObstacle(String id, Point position,
                                   List<PImage> images)
