@@ -49,7 +49,7 @@ public final class VirtualWorld
    private ImageStore imageStore;
    private WorldModel world;
    private WorldView view;
-   private static PlayerEntity player;
+   private static OctoEntity octo;
    private EventScheduler scheduler;
 
    private long next_time;
@@ -127,7 +127,7 @@ public final class VirtualWorld
                break;
 
          }
-         player.move(world, dx, dy);
+         octo.move(world, dx, dy);
       }
    }
 
@@ -170,9 +170,9 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         PlayerEntity player = new PlayerEntity("Player", new Point(0,0),  imageStore.getImageList("octo"), "octo", 0, 10);
-         VirtualWorld.player = player;
-         world.addEntity(player);
+         OctoEntity octo = new OctoEntity("octo", new Point(0,0),  imageStore.getImageList("octo"), "octo", 0, 10);
+         VirtualWorld.octo = octo;
+         world.addEntity(octo);
       }
       catch (FileNotFoundException e)
       {

@@ -4,7 +4,7 @@ import java.util.List;
 
 import static processing.core.PConstants.CODED;
 
-public class OctoEntity extends PlayerEntity{
+public class OctoEntity extends TraversingEntity{
 
     public OctoEntity(String id, Point position,
                        List<PImage> images, String type, int actionPeriod, int animationPeriod){
@@ -27,11 +27,11 @@ public class OctoEntity extends PlayerEntity{
 //
 //    }
 
-//    public void move(WorldModel world, int dx, int dy){
-//        Point pos = new Point(this.getPosition().getX() + dx, this.getPosition().getY() + dy );
-//        if(world.withinBounds(pos) && !(world.isOccupied(pos)))
-//        {
-//            this.setPosition(pos);
-//        }
-//    }
+    public void move(WorldModel world, int dx, int dy){
+        Point pos = new Point(this.getPosition().getX() + dx, this.getPosition().getY() + dy );
+        if(world.withinBounds(pos) && !(world.isOccupied(pos)))
+        {
+            this.setPosition(pos);
+        }
+    }
 }
