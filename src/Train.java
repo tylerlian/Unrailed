@@ -8,7 +8,7 @@ public class Train extends TraversingEntity {
     private List<Point> closed;
 
     public Train(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod) {
-        super(id, position, images, "crab", actionPeriod, animationPeriod);
+        super(id, position, images, "train", actionPeriod, animationPeriod);
         this.closed = new LinkedList<>();
     }
 
@@ -29,7 +29,7 @@ public class Train extends TraversingEntity {
 
     public List<Point> findTrackAround(WorldModel world) {
         List<Entity> crabTarget = world.findNearestTrack(
-                this.getPosition(), "seaGrass", closed);
+                this.getPosition(), "rail", closed);
         List<Point> temp = new LinkedList<>();
         for (Entity rail : crabTarget) {
             if (this.getPosition().adjacent(rail.getPosition())) {

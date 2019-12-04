@@ -166,6 +166,8 @@ final class WorldModel
                return this.parseRail1(properties, imageStore);
             case TRAINSTATION_KEY:
                return this.parseTrainStation(properties, imageStore);
+            case RAIL2_KEY:
+               return this.parseRail2(properties, imageStore);
          }
       }
 
@@ -298,6 +300,7 @@ final class WorldModel
 
       return properties.length == RAIL1_NUM_PROPERTIES;
    }
+
 
    private void tryAddEntity(Entity entity)
    {

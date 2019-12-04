@@ -2,9 +2,9 @@ import java.util.Optional;
 import processing.core.PImage;
 import java.util.List;
 import java.util.Random;
-public class Rail2 extends AbstractEntity{
+public class Rail2 extends Rail{
 
     public Rail2(String id, Point position, List<PImage> images){
-        super(id, position, images, 0, "rail2");
+        super(id, position, images, 0, "rail");
     }
 }
