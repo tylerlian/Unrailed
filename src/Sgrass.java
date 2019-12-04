@@ -25,4 +25,5 @@ public class Sgrass extends ImmobileEntity{
          this.createActivityAction( world, imageStore),
          this.getActionPeriod());
     }
+
 }

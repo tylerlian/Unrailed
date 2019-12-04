@@ -116,15 +116,10 @@ public final class VirtualWorld
                break;
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
-               System.out.println("Space was pressed");
                break;
          }
          octo.move(world, dx, dy);
       }
-
-//      if(e.getKeyCode() == 32){
-//         octo.executeActivity(world, imageStore, scheduler);
-//      }
    }
 
    public void mousePressed() {
