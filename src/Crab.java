@@ -1,7 +1,6 @@
 import processing.core.PImage;
-import java.util.List;
 
-import java.util.Optional;
+import java.util.*;
 
 
 public class Crab extends TraversingEntity {
@@ -12,7 +11,7 @@ public class Crab extends TraversingEntity {
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         Optional<Entity> crabTarget = world.findNearest(
-            this.getPosition(), "fish");
+                this.getPosition(), "fish");
         long nextPeriod = this.getActionPeriod();
 
         if (crabTarget.isPresent())

@@ -1,5 +1,6 @@
 import processing.core.PImage;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,5 +82,37 @@ final class Point
       int deltaY = p1.getY() - p2.getY();
 
       return deltaX * deltaX + deltaY * deltaY;
+   }
+   public Optional<Entity> nearestTrackEntity(List<Entity> entities, List<Point> closed)
+   {
+      if (entities.isEmpty())
+      {
+         return Optional.empty();
+      }
+      else
+      {
+
+         Entity nearest = entities.get(0);
+         int nearestDistance = distanceSquared(nearest.getPosition(), this);
+         if(closed.size() > 0) {
+            System.out.print(closed + "hi");
+         }
+         System.out.println(entities + "oop");
+         for (Entity other : entities)
+         {
+
+            if(!closed.contains(other.getPosition())) {
+
+               int otherDistance = distanceSquared(other.getPosition(), this);
+
+               if (otherDistance < nearestDistance) {
+                  nearest = other;
+                  nearestDistance = otherDistance;
+               }
+            }
+         }
+
+         return Optional.of(nearest);
+      }
    }
 }

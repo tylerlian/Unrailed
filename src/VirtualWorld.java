@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import processing.core.*;
 
+import javax.swing.*;
+
 import static java.awt.event.KeyEvent.*;
 
 
@@ -117,6 +119,9 @@ public final class VirtualWorld
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
                break;
+            case ENTER:
+               System.out.println("start");
+               break;
          }
          octo.move(world, dx, dy);
       }
@@ -128,8 +133,14 @@ public final class VirtualWorld
       }
    }
 
+   public void createTrainOnButton() {
+      Train train = imageStore.createTrain("train", new Point(2,2), 0, 0, imageStore.getImageList("train"));
+      world.addEntity(train);
+      (train).scheduleActions(scheduler, world, imageStore);
+   }
+
    public void createCrabOnClick() {
-      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 5500, 0, imageStore.getImageList("crab"));
+      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 0, 0, imageStore.getImageList("crab"));
       world.addEntity(crab);
       (crab).scheduleActions(scheduler, world, imageStore);
    }

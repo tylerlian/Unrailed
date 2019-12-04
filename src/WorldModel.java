@@ -57,9 +57,11 @@ final class WorldModel
 
    private int numRows;
    private int numCols;
+   private ImageStore images;
    private Background background[][];
    private Entity occupancy[][];
-   private Set<Entity> entities;
+   public Set<Entity> entities;
+   private Sgrass seGrass;
 
    public WorldModel(int numRows, int numCols, Background defaultBackground)
    {
@@ -119,7 +121,26 @@ final class WorldModel
             }
          }
       }
+      return Optional.empty();
+   }
 
+   public Optional<Point> findTrackAround(Point pos)
+   {
+      for (int dy = -1; dy <= 1; dy++)
+      {
+         for (int dx = -1; dx <= 1; dx++)
+         {
+            Point newPt = new Point(pos.getX() + dx, pos.getY() + dy);
+            if (this.withinBounds(newPt) &&
+                    this.isOccupied(newPt))
+            {
+               Object o = getOccupant(newPt);
+               if( o instanceof Sgrass ){
+                  return Optional.of(newPt);
+               }
+            }
+         }
+      }
       return Optional.empty();
    }
 
@@ -340,6 +361,18 @@ final class WorldModel
       }
    }
 
+   public void moveTrainEntity(Entity entity, Point pos)
+   {
+      Point oldPos = entity.getPosition();
+      if (this.withinBounds(pos) && !pos.equals(oldPos))
+      {
+         this.setOccupancyCell(oldPos, null);
+//         this.removeEntityAt(pos);
+         this.setOccupancyCell( pos, entity);
+         entity.setPosition(pos);
+      }
+   }
+
    public void removeEntity(Entity entity)
    {
       this.removeEntityAt(entity.getPosition());
@@ -406,4 +439,17 @@ final class WorldModel
       return pos.nearestEntity(ofType);
    }
 
+   public List<Entity> findNearestTrack(Point pos, String thing, List<Point> closed)
+   {
+      List<Entity> ofType = new LinkedList<>();
+      for (Entity entity : this.entities)
+      {
+         if (thing.equals(entity.getType()))
+         {
+            ofType.add(entity);
+         }
+      }
+
+      return ofType;
+   }
 }
