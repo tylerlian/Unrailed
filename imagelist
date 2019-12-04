@@ -21,7 +21,6 @@ octo images/s4.bmp 255 255 255 0
 octo images/s5.bmp 255 255 255 0
 fish images/fish.bmp
 obstacle images/rock.bmp
-obstacle images/TrainStation.bmp
 fish images/fish.bmp 255 255 255 0
 quake images/quake1.bmp 255 255 255 0
 quake images/quake2.bmp 255 255 255 0
@@ -31,5 +30,4 @@ quake images/quake5.bmp 255 255 255 0
 quake images/quake6.bmp 255 255 255 0
 bubbles images/bubbles.bmp
 seaGrass images/Seaweed1.bmp 255 255 255 0
-seaGrass images/SeaweedF.bmp 255 255 255 0
 background_default images/none.bmp
