@@ -123,7 +123,7 @@ public final class VirtualWorld
       }
 
 //      if(e.getKeyCode() == 32){
-         octo.executeActivity(world, imageStore, scheduler);
+//         octo.executeActivity(world, imageStore, scheduler);
 //      }
    }
 

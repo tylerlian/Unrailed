@@ -8,6 +8,7 @@ public class Sgrass extends ImmobileEntity{
         super(id, position, images, 0, "seaGrass", actionPeriod);
     }
 
+
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         Optional<Point> openPt = world.findOpenAround(this.getPosition());
 
