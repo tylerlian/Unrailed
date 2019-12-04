@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import static processing.core.PConstants.CODED;
 
-public class OctoEntity extends TraversingEntity {
+public class Player extends TraversingEntity {
 
     private int resourceCount = 0;
     private int resourceLimit = 1;
@@ -13,9 +13,9 @@ public class OctoEntity extends TraversingEntity {
     private int railLimit = 1;
     private Point newRailPos;
 
-    public OctoEntity(String id, Point position,
-                      List<PImage> images, String type, int actionPeriod, int animationPeriod) {
-        super(id, position, images, "octo", 0, animationPeriod);
+    public Player(String id, Point position,
+                  List<PImage> images, String type, int actionPeriod, int animationPeriod) {
+        super(id, position, images, "player", 0, animationPeriod);
         this.newRailPos = new Point(position.getX()+1, position.getY());
     }
 

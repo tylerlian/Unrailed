@@ -118,8 +118,8 @@ final class ImageStore
       return new Mines(id, position, images, 0, 0);
    }
 
-   public OctoEntity createOcto(String id, Point position, List<PImage> images){
-      return new OctoEntity(id, position, images, "octo", 0, 10);
+   public Player createOcto(String id, Point position, List<PImage> images){
+      return new Player(id, position, images, "octo", 0, 10);
    }
    public Rail2 createRail2(String id, Point position, List<PImage> images)
    {

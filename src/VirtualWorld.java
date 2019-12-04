@@ -50,7 +50,7 @@ public final class VirtualWorld
    private ImageStore imageStore;
    private WorldModel world;
    private WorldView view;
-   private static OctoEntity octo;
+   private static Player player;
    private static Train train;
    private static Rail1 rail1;
    private static Thief thief;
@@ -119,13 +119,13 @@ public final class VirtualWorld
                dx = 1;
                break;
             case SHIFT:
-               octo.executeActivity(world, imageStore, scheduler);
+               player.executeActivity(world, imageStore, scheduler);
                break;
             case CONTROL:
                clip = PlayMusic.playMusic("Marble.wav", clip);
                break;
          }
-         octo.move(world, dx, dy);
+         player.move(world, dx, dy);
       }
    }
 
@@ -175,9 +175,9 @@ public final class VirtualWorld
    }
 
    private static void virtualOcto(WorldModel world, ImageStore imageStore){
-         OctoEntity octo = imageStore.createOcto("octo", new Point(8,0),  imageStore.getImageList("octo"));
-         VirtualWorld.octo = octo;
-         world.addEntity(octo);
+         Player player = imageStore.createOcto("player", new Point(8,0),  imageStore.getImageList("player"));
+         VirtualWorld.player = player;
+         world.addEntity(player);
    }
 
    private static void virtualRail1(WorldModel world, ImageStore imageStore){

@@ -39,14 +39,14 @@ final class WorldModel
    private static final int RAIL1_COL = 2;
    private static final int RAIL1_ROW = 3;
 
-   private static final String OCTO_KEY = "octo";
-   private static final int OCTO_NUM_PROPERTIES = 7;
-   private static final int OCTO_ID = 1;
-   private static final int OCTO_COL = 2;
-   private static final int OCTO_ROW = 3;
-   private static final int OCTO_LIMIT = 4;
-   private static final int OCTO_ACTION_PERIOD = 5;
-   private static final int OCTO_ANIMATION_PERIOD = 6;
+   private static final String PLAYER_KEY = "player";
+   private static final int PLAYER_NUM_PROPERTIES = 7;
+   private static final int PLAYER_ID = 1;
+   private static final int PLAYER_COL = 2;
+   private static final int PLAYER_ROW = 3;
+   private static final int PLAYER_LIMIT = 4;
+   private static final int PLAYER_ACTION_PERIOD = 5;
+   private static final int PLAYER_ANIMATION_PERIOD = 6;
 
    private static final String BGND_KEY = "background";
    private static final int BGND_NUM_PROPERTIES = 4;
@@ -152,8 +152,6 @@ final class WorldModel
          {
             case BGND_KEY:
                return this.parseBackground(properties, imageStore);
-//            case OCTO_KEY:
-//               return this.parseOcto(properties, imageStore);
             case OBSTACLE_KEY:
                return this.parseObstacle(properties,imageStore);
             case TREE_KEY:
