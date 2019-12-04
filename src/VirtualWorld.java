@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import processing.core.*;
 
-import javax.swing.*;
-
 import static java.awt.event.KeyEvent.*;
 
 
