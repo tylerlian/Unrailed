@@ -34,21 +34,24 @@ public class OctoEntity extends TraversingEntity {
     }
 
     public void move(WorldModel world, int dx, int dy) {
-        System.out.println("I'm in move");
+//        System.out.println("I'm in move");
         Point pos = new Point(this.getPosition().getX() + dx, this.getPosition().getY() + dy);
+        Point railPos = new Point(this.getPosition().getX() + dx + 1, this.getPosition().getY() + dy);
         if (world.withinBounds(pos) && !(world.isOccupied(pos))) {
             this.setPosition(pos);
+            newRailPos = railPos;
         }
     }
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
-
+        System.out.println("Activity activated");
         Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
                 "fish");
 
         if (this.railCount > 0) {
-            Sgrass rail = imageStore.createSgrass("seaGrass", newRailPos, 0, imageStore.getImageList("seaGrass"));
+            Sgrass rail = imageStore.createSgrass("seaGrass", this.getPosition(), 0, imageStore.getImageList("seaGrass"));
             world.addEntity(rail);
+            this.railCount -= 1;
             return;
         }
 
