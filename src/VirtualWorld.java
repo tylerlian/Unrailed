@@ -139,10 +139,9 @@ public final class VirtualWorld
    }
 
    public void createCrabOnClick() {
-      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 10000, 0, imageStore.getImageList("crab"));
+      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 5500, 0, imageStore.getImageList("crab"));
       world.addEntity(crab);
       (crab).scheduleActions(scheduler, world, imageStore);
-      System.out.println(crab.getPosition());
    }
 
    private Point getPressedPoint(){return new Point(mouseX/TILE_WIDTH , mouseY/TILE_HEIGHT);}
@@ -186,7 +185,7 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         OctoEntity octo = new OctoEntity("octo", new Point(0,0),  imageStore.getImageList("octo"), "octo", 0, 10);
+         OctoEntity octo = new OctoEntity("octo", new Point(0,1),  imageStore.getImageList("octo"), "octo", 0, 10);
          VirtualWorld.octo = octo;
          world.addEntity(octo);
       }
