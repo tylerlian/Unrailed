@@ -9,6 +9,10 @@ crab images/crabout01.bmp 255 255 255 128
 crab images/crabout02.bmp 255 255 255 128
 crab images/crabout03.bmp 255 255 255 128
 crab images/crabout04.bmp 255 255 255 128
+train images/train01.bmp 255 255 255 0
+train images/train02.bmp 255 255 255 0
+train images/train03.bmp 255 255 255 0
+train images/train04.bmp 255 255 255 0
 sea images/sea.bmp 255 255 255 0
 octo images/s1.bmp 255 255 255 0
 octo images/s2.bmp 255 255 255 0
@@ -26,5 +30,4 @@ quake images/quake5.bmp 255 255 255 0
 quake images/quake6.bmp 255 255 255 0
 bubbles images/bubbles.bmp
 seaGrass images/Seaweed1.bmp 255 255 255 0
-train images/train.bmp
 background_default images/none.bmp

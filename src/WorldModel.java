@@ -355,6 +355,18 @@ final class WorldModel
       if (this.withinBounds(pos) && !pos.equals(oldPos))
       {
          this.setOccupancyCell(oldPos, null);
+         this.removeEntityAt(pos);
+         this.setOccupancyCell( pos, entity);
+         entity.setPosition(pos);
+      }
+   }
+
+   public void moveTrainEntity(Entity entity, Point pos)
+   {
+      Point oldPos = entity.getPosition();
+      if (this.withinBounds(pos) && !pos.equals(oldPos))
+      {
+         this.setOccupancyCell(oldPos, null);
 //         this.removeEntityAt(pos);
          this.setOccupancyCell( pos, entity);
          entity.setPosition(pos);
@@ -427,7 +439,7 @@ final class WorldModel
       return pos.nearestEntity(ofType);
    }
 
-   public Optional<Entity> findNearestTrack(Point pos, String thing, List<Point> closed)
+   public List<Entity> findNearestTrack(Point pos, String thing, List<Point> closed)
    {
       List<Entity> ofType = new LinkedList<>();
       for (Entity entity : this.entities)
@@ -438,6 +450,6 @@ final class WorldModel
          }
       }
 
-      return pos.nearestTrackEntity(ofType, closed);
+      return ofType;
    }
 }

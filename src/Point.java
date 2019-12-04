@@ -92,23 +92,12 @@ final class Point
       else
       {
 
-//         for (Entity trial : entities){
-//            if(closed.contains(trial.getPosition())){
-//               entities.remove(trial);
-//               System.out.println("you suck ass cheeks");
-//               if(closed.size() > 0) {
-//                  System.out.print(closed);
-//               }
-//               System.out.println(entities);
-//            }
-//         }
-
          Entity nearest = entities.get(0);
          int nearestDistance = distanceSquared(nearest.getPosition(), this);
          if(closed.size() > 0) {
-            System.out.print(closed);
+            System.out.print(closed + "hi");
          }
-         System.out.println(entities);
+         System.out.println(entities + "oop");
          for (Entity other : entities)
          {
 

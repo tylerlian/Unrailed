@@ -119,8 +119,9 @@ public final class VirtualWorld
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
                break;
-            case VK_X:
-               createTrainOnButton();
+            case ENTER:
+               System.out.println("start");
+               break;
          }
          octo.move(world, dx, dy);
       }
@@ -133,13 +134,13 @@ public final class VirtualWorld
    }
 
    public void createTrainOnButton() {
-      Train train = imageStore.createTrain("train", getPressedPoint(), 0, 0, imageStore.getImageList("train"));
+      Train train = imageStore.createTrain("train", new Point(2,2), 0, 0, imageStore.getImageList("train"));
       world.addEntity(train);
       (train).scheduleActions(scheduler, world, imageStore);
    }
 
    public void createCrabOnClick() {
-      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 5500, 0, imageStore.getImageList("crab"));
+      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 0, 0, imageStore.getImageList("crab"));
       world.addEntity(crab);
       (crab).scheduleActions(scheduler, world, imageStore);
    }
