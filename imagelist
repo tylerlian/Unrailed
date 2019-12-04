@@ -28,10 +28,13 @@ bubbles images/bubbles.bmp
 seaGrass images/Seaweed1.bmp 255 255 255 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 seaGrass images/SeaweedF.bmp 255 255 255 0
 =======
 train images/train.bmp
 >>>>>>> parent of 6da6b3e... fixed trees
+=======
+>>>>>>> parent of bea8bd9... Music
 =======
 >>>>>>> parent of bea8bd9... Music
 background_default images/none.bmp
