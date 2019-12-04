@@ -34,7 +34,6 @@ public class OctoEntity extends TraversingEntity {
     }
 
     public void move(WorldModel world, int dx, int dy) {
-//        System.out.println("I'm in move");
         Point pos = new Point(this.getPosition().getX() + dx, this.getPosition().getY() + dy);
         Point railPos = new Point(this.getPosition().getX() + dx + 1, this.getPosition().getY() + dy);
         if (world.withinBounds(pos) && !(world.isOccupied(pos))) {
@@ -44,7 +43,7 @@ public class OctoEntity extends TraversingEntity {
     }
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
-        System.out.println("Activity activated");
+
         Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
                 "fish");
 

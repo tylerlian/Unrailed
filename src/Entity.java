@@ -20,5 +20,6 @@ interface Entity{
    int getImageIndex();
    String getType();
    PImage getCurrentImage(Entity entity);
+
 }
 

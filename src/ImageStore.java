@@ -142,6 +142,12 @@ final class ImageStore
       img.updatePixels();
    }
 
+   public Train createTrain(String id, Point position,
+                            int actionPeriod, int animationPeriod, List<PImage> images)
+   {
+      return new Train(id, position, images, actionPeriod, animationPeriod);
+   }
+
    public Crab createCrab(String id, Point position,
                           int actionPeriod, int animationPeriod, List<PImage> images)
    {
