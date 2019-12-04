@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -113,23 +114,32 @@ public final class VirtualWorld
             case RIGHT:
                dx = 1;
                break;
-            case VK_W:
-               dy = -1;
+            case SHIFT:
+               octo.executeActivity(world, imageStore, scheduler);
+               System.out.println("Space was pressed");
                break;
-            case VK_S:
-               dy = 1;
-               break;
-            case VK_A:
-               dx = -1;
-               break;
-            case VK_D:
-               dx = 1;
-               break;
-
          }
          octo.move(world, dx, dy);
       }
+
+//      if(e.getKeyCode() == 32){
+         octo.executeActivity(world, imageStore, scheduler);
+//      }
    }
+
+   public void mousePressed() {
+      if(!world.isOccupied(getPressedPoint())){
+         createCrabOnClick();
+      }
+   }
+
+   public void createCrabOnClick() {
+      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 0, 0, imageStore.getImageList("crab"));
+      world.addEntity(crab);
+      (crab).scheduleActions(scheduler, world, imageStore);
+   }
+
+   private Point getPressedPoint(){return new Point(mouseX/TILE_WIDTH , mouseY/TILE_HEIGHT);}
 
    private static Background createDefaultBackground(ImageStore imageStore)
    {

@@ -22,44 +22,53 @@ public class OctoNotFull extends OctoEntity{
    {
       Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
          "fish");
-
-      if (!notFullTarget.isPresent() ||
-//         !this.moveTo(world, notFullTarget.get(), scheduler) ||
-         !this.transform(world, scheduler, imageStore))
+        System.out.println("lmao");
+      if (notFullTarget.isPresent())
+//              ||
+//         !this.moveTo(world, notFullTarget.get(), scheduler){
+//         !this.transform(world, scheduler, imageStore))
       {
-         scheduler.scheduleEvent(this,
-            this.createActivityAction(world, imageStore),
-            this.getActionPeriod());
+          System.out.println("hi");
+          if (this.getPosition().adjacent(notFullTarget.get().getPosition()))
+          {
+              this.resourceCount += 1;
+              world.removeEntity(notFullTarget.get());
+              scheduler.unscheduleAllEvents(notFullTarget.get());
+//              return true;
+          }
+//         scheduler.scheduleEvent(this,
+//            this.createActivityAction(world, imageStore),
+//            this.getActionPeriod());
       }
    }
 
-//    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
-//    {
-//        if (this.getPosition().adjacent(target.getPosition()))
-//        {
-//            this.resourceCount += 1;
-//            world.removeEntity(target);
-//            scheduler.unscheduleAllEvents(target);
-//            return true;
-//        }
-////        return false;
-//        else
-//        {
-//            Point nextPos = this.nextPositionOcto(world, target.getPosition());
-////
-//            if (!this.getPosition().equals(nextPos))
-//            {
-//                Optional<Entity> occupant = world.getOccupant(nextPos);
-//                if (occupant.isPresent())
-//                {
-//                    scheduler.unscheduleAllEvents(occupant.get());
-//                }
+    public boolean moveTo(WorldModel world, Entity target, EventScheduler scheduler)
+    {
+        if (this.getPosition().adjacent(target.getPosition()))
+        {
+            this.resourceCount += 1;
+            world.removeEntity(target);
+            scheduler.unscheduleAllEvents(target);
+            return true;
+        }
+//        return false;
+        else
+        {
+            Point nextPos = this.nextPositionOcto(world, target.getPosition());
 //
-//                world.moveEntity(this, nextPos);
-//            }
-//            return false;
-//        }
-//    }
+            if (!this.getPosition().equals(nextPos))
+            {
+                Optional<Entity> occupant = world.getOccupant(nextPos);
+                if (occupant.isPresent())
+                {
+                    scheduler.unscheduleAllEvents(occupant.get());
+                }
+
+                world.moveEntity(this, nextPos);
+            }
+            return false;
+        }
+    }
 
 
     public boolean transform(WorldModel world, EventScheduler scheduler, ImageStore imageStore)
