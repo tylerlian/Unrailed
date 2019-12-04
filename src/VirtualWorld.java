@@ -1,13 +1,9 @@
-import java.awt.*;
-import java.awt.event.KeyEvent;
+import processing.core.PApplet;
+import processing.core.PImage;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import processing.core.*;
-
-import javax.swing.*;
-
-import static java.awt.event.KeyEvent.*;
 
 
 /*
@@ -189,8 +185,6 @@ public final class VirtualWorld
          OctoEntity octo = new OctoEntity("octo", new Point(0,1),  imageStore.getImageList("octo"), "octo", 0, 10);
          VirtualWorld.octo = octo;
          world.addEntity(octo);
-         Obstacle station = new Obstacle("station", new Point( 0, 5), imageStore.getImageList("TrainStation"));
-         world.addEntity(station);
       }
       catch (FileNotFoundException e)
       {
@@ -232,5 +226,6 @@ public final class VirtualWorld
    {
       parseCommandLine(args);
       PApplet.main(VirtualWorld.class);
+      PlayMusic.playMusic("C:\\Users\\koich\\OneDrive\\Documents\\GitHub\\Derailing\\music\\Marble.wav");
    }
 }
