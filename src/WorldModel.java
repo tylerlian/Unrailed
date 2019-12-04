@@ -22,6 +22,8 @@ final class WorldModel
    private static final int OBSTACLE_ID = 1;
    private static final int OBSTACLE_COL = 2;
    private static final int OBSTACLE_ROW = 3;
+   private static final String TRAINSTATION_KEY = "trainstation";
+   private static final String RAIL2_KEY = "rail2";
 
    private static final String ATLANTIS_KEY = "atlantis";
    private static final int ATLANTIS_NUM_PROPERTIES = 4;
@@ -162,6 +164,8 @@ final class WorldModel
                return this.parseAtlantis(properties, imageStore);
             case RAIL1_KEY:
                return this.parseRail1(properties, imageStore);
+            case TRAINSTATION_KEY:
+               return this.parseTrainStation(properties, imageStore);
          }
       }
 
@@ -211,6 +215,38 @@ final class WorldModel
                  Integer.parseInt(properties[OBSTACLE_ROW]));
          Entity entity = imageStore.createObstacle(properties[OBSTACLE_ID], pt,
                   imageStore.getImageList(OBSTACLE_KEY));
+         this.tryAddEntity( entity);
+      }
+
+      return properties.length == OBSTACLE_NUM_PROPERTIES;
+   }
+
+   private boolean parseTrainStation(String[] properties,
+                                 ImageStore imageStore)
+   {
+      if (properties.length == OBSTACLE_NUM_PROPERTIES)
+      {
+         Point pt = new Point(
+                 Integer.parseInt(properties[OBSTACLE_COL]),
+                 Integer.parseInt(properties[OBSTACLE_ROW]));
+         Entity entity = imageStore.createTrainStation(properties[OBSTACLE_ID], pt,
+                 imageStore.getImageList(TRAINSTATION_KEY));
+         this.tryAddEntity( entity);
+      }
+
+      return properties.length == OBSTACLE_NUM_PROPERTIES;
+   }
+
+   private boolean parseRail2(String[] properties,
+                                     ImageStore imageStore)
+   {
+      if (properties.length == OBSTACLE_NUM_PROPERTIES)
+      {
+         Point pt = new Point(
+                 Integer.parseInt(properties[OBSTACLE_COL]),
+                 Integer.parseInt(properties[OBSTACLE_ROW]));
+         Entity entity = imageStore.createRail2(properties[OBSTACLE_ID], pt,
+                 imageStore.getImageList(RAIL2_KEY));
          this.tryAddEntity( entity);
       }
 

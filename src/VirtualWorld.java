@@ -184,7 +184,7 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         OctoEntity octo = imageStore.createOcto("octo", new Point(4,4),  imageStore.getImageList("octo"));
+         OctoEntity octo = imageStore.createOcto("octo", new Point(6,6),  imageStore.getImageList("octo"));
          VirtualWorld.octo = octo;
          world.addEntity(octo);
 //         world.removeEntity(octo);

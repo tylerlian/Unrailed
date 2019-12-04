@@ -37,6 +37,8 @@ obstacle obstacle_29_20 29 20
 obstacle obstacle_30_21 30 21
 obstacle obstacle_31_22 31 22
 obstacle obstacle_32_23 32 23
+trainstation trainstation_4_3 4 3
+rail2 rail2_4_4 4 4
 fish fish_1 0 0 5
 fish fish_1 0 1 5
 fish fish_1 0 2 5

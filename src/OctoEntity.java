@@ -20,20 +20,6 @@ public class OctoEntity extends TraversingEntity {
         this.newRailPos = new Point(position.getX()+1, position.getY());
     }
 
-    public Point nextPositionOcto(WorldModel world, Point destPos) {
-        PathingStrategy aStar = new AStarPathingStrategy();
-
-        List<Point> path = aStar.computePath(getPosition(), destPos, p -> (!world.isOccupied(p) && world.withinBounds(p)), Point::adjacent, PathingStrategy.CARDINAL_NEIGHBORS);
-
-        if (path.size() == 0) {
-            return getPosition();
-        } else {
-            Point next = path.get(0);
-            path.remove(0);
-            return next;
-        }
-    }
-
     public void move(WorldModel world, int dx, int dy) {
         Point pos = new Point(this.getPosition().getX() + dx, this.getPosition().getY() + dy);
         Point railPos = new Point(this.getPosition().getX() + dx + 1, this.getPosition().getY() + dy);

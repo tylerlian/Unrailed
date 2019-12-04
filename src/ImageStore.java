@@ -166,6 +166,7 @@ final class ImageStore
    {
       return new Rail2(id, position, images);
    }
+
    public TrainStation createTrainStation(String id, Point position,
                                   List<PImage> images)
    {
@@ -192,4 +193,5 @@ final class ImageStore
    {
       return new Rail1(id, position, images);
    }
+
 }
