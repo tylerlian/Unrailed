@@ -14,6 +14,12 @@ public class Train extends TraversingEntity {
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         List<Point> crabTarget = findTrackAround(world);
+        Point finishLine = findFinishLine(world);
+
+        if(finishLine != this.getPosition()){
+            this.moveTo(world,finishLine);
+            System.out.println("You win!");
+        }
 
         long nextPeriod = this.getActionPeriod();
 
@@ -27,9 +33,20 @@ public class Train extends TraversingEntity {
 
     }
 
+    public Point findFinishLine(WorldModel world) {
+        List<Entity> crabTarget = world.findNearestTrack(
+                this.getPosition(), "rail2", closed);
+        for (Entity rail : crabTarget) {
+            if(this.getPosition().adjacent(rail.getPosition())){
+                return rail.getPosition();
+            }
+        }
+        return this.getPosition();
+    }
+
     public List<Point> findTrackAround(WorldModel world) {
         List<Entity> crabTarget = world.findNearestTrack(
-                this.getPosition(), "rail", closed);
+                this.getPosition(), "rail1", closed);
         List<Point> temp = new LinkedList<>();
         for (Entity rail : crabTarget) {
             if (this.getPosition().adjacent(rail.getPosition())) {
@@ -38,7 +55,6 @@ public class Train extends TraversingEntity {
         }
         return temp;
     }
-
 
     private void moveTo(WorldModel world, Point railPos) {
         world.moveTrainEntity(this, railPos);

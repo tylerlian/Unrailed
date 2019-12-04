@@ -164,7 +164,7 @@ final class ImageStore
    }
    public Rail2 createRail2(String id, Point position, List<PImage> images)
    {
-      return new Rail2(id, position, images, 0, "rail2");
+      return new Rail2(id, position, images);
    }
 
    public TrainStation createTrainStation(String id, Point position,
@@ -191,7 +191,7 @@ final class ImageStore
 
    public Rail1 createRail1(String id, Point position, List<PImage> images)
    {
-      return new Rail1(id, position, images, 0, "rail2");
+      return new Rail1(id, position, images);
    }
 
 }
