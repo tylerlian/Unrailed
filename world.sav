@@ -36,9 +36,7 @@ obstacle obstacle_28_19 28 19
 obstacle obstacle_29_20 29 20
 obstacle obstacle_30_21 30 21
 obstacle obstacle_31_22 31 22
-obstacle obstacle_32_23 32 23
 trainstation trainstation_4_3 4 3
-rail2 rail2_4_4 4 4
 fish fish_1 0 0 5
 fish fish_1 0 1 5
 fish fish_1 0 2 5
@@ -84,18 +82,6 @@ fish fish_1 23 19 5
 fish fish_1 23 18 5
 fish fish_1 22 20 5
 fish fish_1 22 19 5
-grassGrass grassGrass_27_6 0 0 0
-fish fish_1 0 0
-fish fish_1 1 0
-fish fish_1 2 0
-fish fish_1 3 0
-fish fish_1 4 0
-fish fish_1 5 0
-fish fish_1 6 0
-fish fish_1 7 0
-fish fish_1 8 0
-fish fish_1 9 0
-fish fish_1 10 0
 fish fish_1 11 0 5
 fish fish_1 12 0 5
 fish fish_1 13 0 5
@@ -105,17 +91,11 @@ fish fish_1 16 0 5
 fish fish_1 17 0 5
 fish fish_1 18 0 5
 fish fish_1 19 0 5
-fish fish_1 20 0 5
 fish fish_1 21 0 5
 fish fish_1 22 0 5
 fish fish_1 34 0 5
 fish fish_1 35 0 5
 fish fish_1 36 0 5
-fish fish_1 6 1
-fish fish_1 7 1
-fish fish_1 8 1
-fish fish_1 9 1
-fish fish_1 10 1
 fish fish_1 11 1 5
 fish fish_1 12 1 5
 fish fish_1 13 1 5
@@ -134,17 +114,6 @@ fish fish_1 36 1 5
 fish fish_1 37 1 5
 fish fish_1 38 1 5
 fish fish_1 39 1 5
-fish fish_1 0 2
-fish fish_1 1 2
-fish fish_1 2 2
-fish fish_1 3 2
-fish fish_1 4 2
-fish fish_1 5 2
-fish fish_1 6 2
-fish fish_1 7 2
-fish fish_1 8 2
-fish fish_1 9 2
-fish fish_1 10 2
 fish fish_1 22 2 5
 fish fish_1 23 2 5
 fish fish_1 24 2 5
@@ -170,17 +139,6 @@ fish fish_1 31 4 5
 fish fish_1 37 4 5
 fish fish_1 38 4 5
 fish fish_1 39 4 5
-fish fish_1 0 5
-fish fish_1 1 5
-fish fish_1 2 5
-fish fish_1 3 5
-fish fish_1 4 5
-fish fish_1 5 5
-fish fish_1 6 5
-fish fish_1 7 5
-fish fish_1 8 5
-fish fish_1 9 5
-fish fish_1 10 5
 fish fish_1 11 5 5
 fish fish_1 12 5 5
 fish fish_1 13 5 5
@@ -211,15 +169,10 @@ fish fish_1 3 10 5
 fish fish_1 4 10 5
 fish fish_1 5 10 5
 fish fish_1 6 10 5
-fish fish_1 7 10 5
-fish fish_1 8 10 5
 fish fish_1 9 10 5
 fish fish_1 10 1 5
 fish fish_1 11 10 5
 fish fish_1 12 10 5
-fish fish_1 13 10 5
-fish fish_1 14 10 5
-fish fish_1 15 10 5
 fish fish_1 16 10 5
 fish fish_1 17 10 5
 fish fish_1 32 10 5
@@ -230,17 +183,14 @@ fish fish_1 36 10 5
 fish fish_1 37 10 5
 fish fish_1 38 10 5
 fish fish_1 39 10 5
-fish fish_1 0 11 5
 fish fish_1 1 11 5
 fish fish_1 2 11 5
 fish fish_1 3 11 5
 fish fish_1 4 11 5
 fish fish_1 5 11 5
 fish fish_1 6 11 5
-fish fish_1 7 11 5
 fish fish_1 8 11 5
 fish fish_1 9 11 5
-fish fish_1 10 1 5
 fish fish_1 11 11 5
 fish fish_1 12 11 5
 fish fish_1 13 11 5
@@ -262,10 +212,8 @@ fish fish_1 28 11 5
 fish fish_1 29 11 5
 fish fish_1 30 11 5
 fish fish_1 6 12 5
-fish fish_1 7 12 5
 fish fish_1 8 12 5
 fish fish_1 9 12 5
-fish fish_1 10 1 5
 fish fish_1 32 14 5
 fish fish_1 33 14 5
 fish fish_1 34 14 5
@@ -284,7 +232,6 @@ fish fish_1 6 15 5
 fish fish_1 7 15 5
 fish fish_1 8 15 5
 fish fish_1 9 15 5
-fish fish_1 10 1 5
 fish fish_1 1 16 5
 fish fish_1 2 16 5
 fish fish_1 3 16 5
@@ -292,7 +239,6 @@ fish fish_1 4 16 5
 fish fish_1 5 16 5
 fish fish_1 6 16 5
 fish fish_1 7 16 5
-fish fish_1 10 1 5
 fish fish_1 11 18 5
 fish fish_1 12 18 5
 fish fish_1 13 18 5
@@ -321,7 +267,6 @@ fish fish_1 35 18 5
 fish fish_1 36 18 5
 fish fish_1 37 18 5
 fish fish_1 38 18 5
-fish fish_1 0 19 5
 fish fish_1 1 19 5
 fish fish_1 2 19 5
 fish fish_1 3 19 5
@@ -330,7 +275,6 @@ fish fish_1 5 19 5
 fish fish_1 6 19 5
 fish fish_1 7 19 5
 fish fish_1 8 19 5
-fish fish_1 10 1 5
 fish fish_1 28 21 5
 fish fish_1 29 21 5
 fish fish_1 30 21 5
@@ -371,7 +315,6 @@ fish fish_1 24 22 5
 fish fish_1 25 22 5
 fish fish_1 37 22 5
 fish fish_1 38 22 5
-fish fish_1 0 23
 fish fish_1 1 23 5
 fish fish_1 2 23 5
 fish fish_1 3 23 5
@@ -380,7 +323,6 @@ fish fish_1 5 23 5
 fish fish_1 6 23 5
 fish fish_1 7 23 5
 fish fish_1 8 23 5
-fish fish_1 10 2 5
 fish fish_1 11 23 5
 fish fish_1 12 23 5
 fish fish_1 13 23 5
@@ -407,7 +349,6 @@ fish fish_1 5 24 5
 fish fish_1 6 24 5
 fish fish_1 7 24 5
 fish fish_1 8 24 5
-fish fish_1 10 2 5
 fish fish_1 11 24 5
 fish fish_1 12 24 5
 fish fish_1 13 24 5
@@ -446,7 +387,6 @@ fish fish_1 5 25 5
 fish fish_1 6 25 5
 fish fish_1 7 25 5
 fish fish_1 8 25 5
-fish fish_1 10 2 5
 fish fish_1 11 25 5
 fish fish_1 12 25 5
 fish fish_1 13 25 5
@@ -485,7 +425,6 @@ fish fish_1 5 26 5
 fish fish_1 6 26 5
 fish fish_1 7 26 5
 fish fish_1 8 26 5
-fish fish_1 10 2 56
 fish fish_1 11 26 5
 fish fish_1 12 26 5
 fish fish_1 13 26 5
@@ -524,7 +463,6 @@ fish fish_1 5 27 5
 fish fish_1 6 27 5
 fish fish_1 7 27 5
 fish fish_1 8 27 5
-fish fish_1 10 2 57
 fish fish_1 11 27 5
 fish fish_1 12 27 5
 fish fish_1 13 27 5
@@ -632,7 +570,6 @@ fish fish_1 34 29 5
 fish fish_1 35 29 5
 fish fish_1 36 29 5
 fish fish_1 37 29 5
-obstacle obstacle2 21 0
 obstacle obstacle2 13 2
 obstacle obstacle2 14 2
 obstacle obstacle2 15 2
