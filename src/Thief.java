@@ -3,15 +3,15 @@ import processing.core.PImage;
 import java.util.*;
 
 
-public class Crab extends TraversingEntity {
+public class Thief extends TraversingEntity {
 
-    public Crab(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod){
-        super(id, position, images, "crab", actionPeriod, animationPeriod);
+    public Thief(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod){
+        super(id, position, images, "thief", actionPeriod, animationPeriod);
     }
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
         Optional<Entity> crabTarget = world.findNearest(
-                this.getPosition(), "fish");
+                this.getPosition(), "tree");
         long nextPeriod = this.getActionPeriod();
 
         if (crabTarget.isPresent())

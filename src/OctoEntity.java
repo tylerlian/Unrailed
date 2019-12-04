@@ -7,16 +7,15 @@ import static processing.core.PConstants.CODED;
 
 public class OctoEntity extends TraversingEntity {
 
-    private int resourceCount;
+    private int resourceCount = 0;
     private int resourceLimit = 1;
     private int railCount = 0;
     private int railLimit = 1;
     private Point newRailPos;
 
     public OctoEntity(String id, Point position,
-                      List<PImage> images, String type, int resourceCount, int actionPeriod, int animationPeriod) {
+                      List<PImage> images, String type, int actionPeriod, int animationPeriod) {
         super(id, position, images, "octo", 0, animationPeriod);
-        this.resourceCount = resourceCount;
         this.newRailPos = new Point(position.getX()+1, position.getY());
     }
 
@@ -32,10 +31,10 @@ public class OctoEntity extends TraversingEntity {
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {
 
         Optional<Entity> notFullTarget = world.findNearest(this.getPosition(),
-                "fish");
+                "tree");
 
         if (this.railCount > 0) {
-            Rail1 rail = imageStore.createRail1("rail1", this.getPosition(), imageStore.getImageList("rail1"));
+            Rail1 rail = imageStore.createRail1("rail1", this.getPosition(),  imageStore.getImageList("rail1"));
             world.addEntity(rail);
             this.railCount -= 1;
             return;
@@ -43,9 +42,9 @@ public class OctoEntity extends TraversingEntity {
 
         if (resourceCount < resourceLimit) {
             notFullTarget = world.findNearest(this.getPosition(),
-                    "fish");
+                    "tree");
         } else if (resourceCount == resourceLimit) {
-            notFullTarget = world.findNearest(this.getPosition(), "atlantis");
+            notFullTarget = world.findNearest(this.getPosition(), "mines");
         }
 
         if (notFullTarget.isPresent() && resourceCount < resourceLimit) {

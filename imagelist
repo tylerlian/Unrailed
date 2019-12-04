@@ -1,14 +1,14 @@
-atlantis images/atlantis0.bmp 255 255 255 0
-atlantis images/atlantis1.bmp 
-atlantis images/atlantis2.bmp 
-atlantis images/atlantis3.bmp 
-atlantis images/atlantis4.bmp 
-atlantis images/atlantis5.bmp
-atlantis images/atlantis6.bmp
-crab images/crabout01.bmp 255 255 255 128
-crab images/crabout02.bmp 255 255 255 128
-crab images/crabout03.bmp 255 255 255 128
-crab images/crabout04.bmp 255 255 255 128
+mines images/mines0.bmp 255 255 255 0
+mines images/mines1.bmp
+mines images/mines2.bmp
+mines images/mines3.bmp
+mines images/mines4.bmp
+mines images/mines5.bmp
+mines images/mines6.bmp
+thief images/thiefout01.bmp 255 255 255 128
+thief images/thiefout02.bmp 255 255 255 128
+thief images/thiefout03.bmp 255 255 255 128
+thief images/thiefout04.bmp 255 255 255 128
 train images/train01.bmp 255 255 255 0
 train images/train02.bmp 255 255 255 0
 train images/train03.bmp 255 255 255 0
@@ -19,11 +19,10 @@ octo images/s2.bmp 255 255 255 0
 octo images/s3.bmp 255 255 255 0
 octo images/s4.bmp 255 255 255 0
 octo images/s5.bmp 255 255 255 0
-fish images/fish.bmp
 obstacle images/rock.bmp
 trainstation images/TrainStation.bmp
 rail2 images/rail2.bmp
-fish images/fish.bmp 255 255 255 0
+tree images/tree.bmp 255 255 255 0
 quake images/quake1.bmp 255 255 255 0
 quake images/quake2.bmp 255 255 255 0
 quake images/quake3.bmp 255 255 255 0

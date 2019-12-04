@@ -1,10 +1,10 @@
 import processing.core.PImage;
 import java.util.List;
 import java.util.Optional;
-public class AtlantisFull extends AbstractAnimationEntity{
+public class Mines extends AbstractAnimationEntity{
 
-    public AtlantisFull(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod, int resourceCount, int resourceLimit){
-        super(id, position, images, "atlantis", actionPeriod, animationPeriod);
+    public Mines(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod){
+        super(id, position, images, "mines", actionPeriod, animationPeriod);
     }
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler)

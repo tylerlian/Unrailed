@@ -10,26 +10,28 @@ in terms of entities and background elements
 final class WorldModel
 {
 
-   private static final String FISH_KEY = "fish";
-   private static final int FISH_NUM_PROPERTIES = 5;
-   private static final int FISH_ID = 1;
-   private static final int FISH_COL = 2;
-   private static final int FISH_ROW = 3;
-   private static final int FISH_ACTION_PERIOD = 4;
+   private static final String TREE_KEY = "tree";
+   private static final int TREE_NUM_PROPERTIES = 5;
+   private static final int TREE_ID = 1;
+   private static final int TREE_COL = 2;
+   private static final int TREE_ROW = 3;
+   private static final int TREE_ACTION_PERIOD = 4;
 
    private static final String OBSTACLE_KEY = "obstacle";
    private static final int OBSTACLE_NUM_PROPERTIES = 4;
    private static final int OBSTACLE_ID = 1;
    private static final int OBSTACLE_COL = 2;
    private static final int OBSTACLE_ROW = 3;
+
    private static final String TRAINSTATION_KEY = "trainstation";
+
    private static final String RAIL2_KEY = "rail2";
 
-   private static final String ATLANTIS_KEY = "atlantis";
-   private static final int ATLANTIS_NUM_PROPERTIES = 4;
-   private static final int ATLANTIS_ID = 1;
-   private static final int ATLANTIS_COL = 2;
-   private static final int ATLANTIS_ROW = 3;
+   private static final String MINES_KEY = "mines";
+   private static final int MINES_NUM_PROPERTIES = 4;
+   private static final int MINES_ID = 1;
+   private static final int MINES_COL = 2;
+   private static final int MINES_ROW = 3;
 
    private static final String RAIL1_KEY = "rail1";
    private static final int RAIL1_NUM_PROPERTIES = 5;
@@ -51,10 +53,6 @@ final class WorldModel
    private static final int BGND_ID = 1;
    private static final int BGND_COL = 2;
    private static final int BGND_ROW = 3;
-
-   private static final String QUAKE_ID = "quake";
-   private static final int QUAKE_ACTION_PERIOD = 1100;
-   private static final int QUAKE_ANIMATION_PERIOD = 100;
 
    private int numRows;
    private int numCols;
@@ -158,10 +156,10 @@ final class WorldModel
 //               return this.parseOcto(properties, imageStore);
             case OBSTACLE_KEY:
                return this.parseObstacle(properties,imageStore);
-            case FISH_KEY:
-               return this.parseFish(properties, imageStore);
-            case ATLANTIS_KEY:
-               return this.parseAtlantis(properties, imageStore);
+            case TREE_KEY:
+               return this.parseTree(properties, imageStore);
+            case MINES_KEY:
+               return this.parseMines(properties, imageStore);
             case RAIL1_KEY:
                return this.parseRail1(properties, imageStore);
             case TRAINSTATION_KEY:
@@ -188,24 +186,6 @@ final class WorldModel
 
       return properties.length == BGND_NUM_PROPERTIES;
    }
-
-//   private boolean parseOcto(String[] properties,
-//                             ImageStore imageStore)
-//   {
-//      if (properties.length == OCTO_NUM_PROPERTIES)
-//      {
-//         Point pt = new Point(Integer.parseInt(properties[OCTO_COL]),
-//                 Integer.parseInt(properties[OCTO_ROW]));
-//         Entity entity = imageStore.createOctoNotFull(properties[OCTO_ID],
-//                 Integer.parseInt(properties[OCTO_LIMIT]), pt,
-//                 Integer.parseInt(properties[OCTO_ACTION_PERIOD]),
-//                 Integer.parseInt(properties[OCTO_ANIMATION_PERIOD]),
-//                imageStore. getImageList( OCTO_KEY));
-//         this.tryAddEntity(entity);
-//      }
-//
-//      return properties.length == OCTO_NUM_PROPERTIES;
-//   }
 
    private boolean parseObstacle(String[] properties,
                                  ImageStore imageStore)
@@ -255,35 +235,34 @@ final class WorldModel
       return properties.length == OBSTACLE_NUM_PROPERTIES;
    }
 
-   private boolean parseFish(String[] properties,
+   private boolean parseTree(String[] properties,
                              ImageStore imageStore)
    {
-      if (properties.length == FISH_NUM_PROPERTIES)
+      if (properties.length == TREE_NUM_PROPERTIES)
       {
-         Point pt = new Point(Integer.parseInt(properties[FISH_COL]),
-                 Integer.parseInt(properties[FISH_ROW]));
-         Entity entity = imageStore.createFish(properties[FISH_ID], pt,
-                 Integer.parseInt(properties[FISH_ACTION_PERIOD]),
-                 imageStore.getImageList(FISH_KEY));
+         Point pt = new Point(Integer.parseInt(properties[TREE_COL]),
+                 Integer.parseInt(properties[TREE_ROW]));
+         Entity entity = imageStore.createTree(properties[TREE_ID], pt,
+                 imageStore.getImageList(TREE_KEY));
          this.tryAddEntity(entity);
       }
 
-      return properties.length == FISH_NUM_PROPERTIES;
+      return properties.length == TREE_NUM_PROPERTIES;
    }
 
-   private boolean parseAtlantis(String[] properties,
+   private boolean parseMines(String[] properties,
                                  ImageStore imageStore)
    {
-      if (properties.length == ATLANTIS_NUM_PROPERTIES)
+      if (properties.length == MINES_NUM_PROPERTIES)
       {
-         Point pt = new Point(Integer.parseInt(properties[ATLANTIS_COL]),
-                 Integer.parseInt(properties[ATLANTIS_ROW]));
-         Entity entity = imageStore.createAtlantis(properties[ATLANTIS_ID], pt,
-                 imageStore.getImageList(ATLANTIS_KEY));
+         Point pt = new Point(Integer.parseInt(properties[MINES_COL]),
+                 Integer.parseInt(properties[MINES_ROW]));
+         Entity entity = imageStore.createMines(properties[MINES_ID], pt,
+                 imageStore.getImageList(MINES_KEY));
          this.tryAddEntity(entity);
       }
 
-      return properties.length == ATLANTIS_NUM_PROPERTIES;
+      return properties.length == MINES_NUM_PROPERTIES;
    }
 
    private boolean parseRail1(String[] properties,

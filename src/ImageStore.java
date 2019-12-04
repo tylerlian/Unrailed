@@ -9,47 +9,6 @@ ImageStore: to ideally keep track of the images used in our virtual world
 
 final class ImageStore
 {
-   private static final String FISH_KEY = "fish";
-   private static final int FISH_NUM_PROPERTIES = 5;
-   private static final int FISH_ID = 1;
-   private static final int FISH_COL = 2;
-   private static final int FISH_ROW = 3;
-   private static final int FISH_ACTION_PERIOD = 4;
-
-   private static final String OBSTACLE_KEY = "obstacle";
-   private static final int OBSTACLE_NUM_PROPERTIES = 4;
-   private static final int OBSTACLE_ID = 1;
-   private static final int OBSTACLE_COL = 2;
-   private static final int OBSTACLE_ROW = 3;
-
-   private static final String ATLANTIS_KEY = "atlantis";
-   private static final int ATLANTIS_NUM_PROPERTIES = 4;
-   private static final int ATLANTIS_ID = 1;
-   private static final int ATLANTIS_COL = 2;
-   private static final int ATLANTIS_ROW = 3;
-
-   private static final String SGRASS_KEY = "seaGrass";
-   private static final int SGRASS_NUM_PROPERTIES = 5;
-   private static final int SGRASS_ID = 1;
-   private static final int SGRASS_COL = 2;
-   private static final int SGRASS_ROW = 3;
-   private static final int SGRASS_ACTION_PERIOD = 4;
-
-   private static final String OCTO_KEY = "octo";
-   private static final int OCTO_NUM_PROPERTIES = 7;
-   private static final int OCTO_ID = 1;
-   private static final int OCTO_COL = 2;
-   private static final int OCTO_ROW = 3;
-   private static final int OCTO_LIMIT = 4;
-   private static final int OCTO_ACTION_PERIOD = 5;
-   private static final int OCTO_ANIMATION_PERIOD = 6;
-
-   private static final String BGND_KEY = "background";
-   private static final int BGND_NUM_PROPERTIES = 4;
-   private static final int BGND_ID = 1;
-   private static final int BGND_COL = 2;
-   private static final int BGND_ROW = 3;
-
    private static final String QUAKE_ID = "quake";
    private static final int QUAKE_ACTION_PERIOD = 1100;
    private static final int QUAKE_ANIMATION_PERIOD = 100;
@@ -148,19 +107,19 @@ final class ImageStore
       return new Train(id, position, images, actionPeriod, animationPeriod);
    }
 
-   public Crab createCrab(String id, Point position,
+   public Thief createThief(String id, Point position,
                           int actionPeriod, int animationPeriod, List<PImage> images)
    {
-      return new Crab(id, position, images, actionPeriod, animationPeriod);
+      return new Thief(id, position, images, actionPeriod, animationPeriod);
    }
-   public AtlantisFull createAtlantis(String id, Point position,
+   public Mines createMines(String id, Point position,
                                   List<PImage> images)
    {
-      return new AtlantisFull(id, position, images, 0, 0, 0, 0);
+      return new Mines(id, position, images, 0, 0);
    }
 
    public OctoEntity createOcto(String id, Point position, List<PImage> images){
-      return new OctoEntity(id, position, images, "octo", 0, 0, 10);
+      return new OctoEntity(id, position, images, "octo", 0, 10);
    }
    public Rail2 createRail2(String id, Point position, List<PImage> images)
    {
@@ -179,10 +138,10 @@ final class ImageStore
       return new Obstacle(id, position, images);
    }
 
-   public Fish createFish(String id, Point position, int actionPeriod,
+   public Tree createTree(String id, Point position,
                           List<PImage> images)
    {
-      return new Fish(id, position, images, actionPeriod);
+      return new Tree(id, position, images);
    }
    public Quake createQuake(Point position, List<PImage> images)
    {

@@ -53,7 +53,7 @@ public final class VirtualWorld
    private static OctoEntity octo;
    private static Train train;
    private static Rail1 rail1;
-   private static Crab crab;
+   private static Thief thief;
    private EventScheduler scheduler;
    private Optional<Clip> clip = Optional.empty();
 
@@ -131,11 +131,11 @@ public final class VirtualWorld
 
    public void mousePressed() {
       if(!world.isOccupied(getPressedPoint())){
-         createCrabOnClick();
+         createThiefOnClick();
       }
    }
 
-   public void createCrabOnClick() {
+   public void createThiefOnClick() {
       virtualTrain(world, imageStore, scheduler);
       virtualThief(world, imageStore, getPressedPoint(), scheduler);
    }
@@ -194,10 +194,10 @@ public final class VirtualWorld
    }
 
    private static void virtualThief(WorldModel world, ImageStore imageStore, Point pos, EventScheduler scheduler){
-         Crab crab = imageStore.createCrab("crab", pos, 5500, 0, imageStore.getImageList("crab"));
-         VirtualWorld.crab = crab;
-         world.addEntity(crab);
-         (crab).scheduleActions(scheduler, world, imageStore);
+         Thief thief = imageStore.createThief("thief", pos, 5500, 0, imageStore.getImageList("thief"));
+         VirtualWorld.thief = thief;
+         world.addEntity(thief);
+         (thief).scheduleActions(scheduler, world, imageStore);
    }
 
    private static void loadWorld(WorldModel world, String filename,
