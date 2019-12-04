@@ -18,7 +18,7 @@ public final class VirtualWorld
 {
    private static final int TIMER_ACTION_PERIOD = 100;
 
-   private static final int VIEW_WIDTH = 1300;
+   private static final int VIEW_WIDTH = 720;
    private static final int VIEW_HEIGHT = 720;
    private static final int TILE_WIDTH = 32;
    private static final int TILE_HEIGHT = 32;
@@ -115,8 +115,8 @@ public final class VirtualWorld
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
                break;
-            case VK_X:
-               createTrainOnButton();
+//            case VK_X:
+//               createTrainOnButton();
          }
          octo.move(world, dx, dy);
       }
