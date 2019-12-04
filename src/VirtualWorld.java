@@ -1,11 +1,9 @@
-import java.awt.*;
-import java.awt.event.KeyEvent;
+import processing.core.PApplet;
+import processing.core.PImage;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import processing.core.*;
-
-import static java.awt.event.KeyEvent.*;
 
 
 /*
@@ -229,5 +227,6 @@ public final class VirtualWorld
    {
       parseCommandLine(args);
       PApplet.main(VirtualWorld.class);
+      PlayMusic.playMusic("C:\\Users\\koich\\OneDrive\\Documents\\GitHub\\Derailing\\music\\Marble.wav");
    }
 }
