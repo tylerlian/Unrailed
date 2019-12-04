@@ -20,7 +20,7 @@ public final class VirtualWorld
 {
    private static final int TIMER_ACTION_PERIOD = 100;
 
-   private static final int VIEW_WIDTH = 1300;
+   private static final int VIEW_WIDTH = 720;
    private static final int VIEW_HEIGHT = 720;
    private static final int TILE_WIDTH = 32;
    private static final int TILE_HEIGHT = 32;
@@ -178,6 +178,8 @@ public final class VirtualWorld
          OctoEntity octo = new OctoEntity("octo", new Point(0,1),  imageStore.getImageList("octo"), "octo", 0, 10);
          VirtualWorld.octo = octo;
          world.addEntity(octo);
+         Obstacle station = new Obstacle("station", new Point( 0, 5), imageStore.getImageList("TrainStation"));
+         world.addEntity(station);
       }
       catch (FileNotFoundException e)
       {
