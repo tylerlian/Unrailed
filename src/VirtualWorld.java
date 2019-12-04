@@ -49,6 +49,9 @@ public final class VirtualWorld
    private WorldModel world;
    private WorldView view;
    private static OctoEntity octo;
+   private static Train train;
+   private static Rail1 rail1;
+   private static Crab crab;
    private EventScheduler scheduler;
 
    private long next_time;
@@ -126,19 +129,9 @@ public final class VirtualWorld
       }
    }
 
-   public void createTrainOnButton() {
-      Train train = imageStore.createTrain("train", new Point(2,2), 0, 0, imageStore.getImageList("train"));
-      world.addEntity(train);
-      (train).scheduleActions(scheduler, world, imageStore);
-   }
-
    public void createCrabOnClick() {
-      Train train = imageStore.createTrain("train", new Point(2,2), 0, 0, imageStore.getImageList("train"));
-      world.addEntity(train);
-      (train).scheduleActions(scheduler, world, imageStore);
-      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 5500, 0, imageStore.getImageList("crab"));
-      world.addEntity(crab);
-      (crab).scheduleActions(scheduler, world, imageStore);
+      virtualTrain(world, imageStore, scheduler);
+      virtualThief(world, imageStore, getPressedPoint(), scheduler);
    }
 
    private Point getPressedPoint(){return new Point(mouseX/TILE_WIDTH , mouseY/TILE_HEIGHT);}
@@ -175,6 +168,32 @@ public final class VirtualWorld
       }
    }
 
+   private static void virtualOcto(WorldModel world, ImageStore imageStore){
+         OctoEntity octo = imageStore.createOcto("octo", new Point(8,0),  imageStore.getImageList("octo"));
+         VirtualWorld.octo = octo;
+         world.addEntity(octo);
+   }
+
+   private static void virtualRail1(WorldModel world, ImageStore imageStore){
+         Rail1 rail1 = imageStore.createRail1("rail1", new Point(4,4), imageStore.getImageList("rail1"));
+         VirtualWorld.rail1 = rail1;
+         world.addEntity(rail1);
+   }
+
+   private static void virtualTrain(WorldModel world, ImageStore imageStore, EventScheduler scheduler){
+         Train train = imageStore.createTrain("train", new Point(4,4), 0, 0, imageStore.getImageList("train"));
+         VirtualWorld.train = train;
+         world.addEntity(train);
+         (train).scheduleActions(scheduler, world, imageStore);
+   }
+
+   private static void virtualThief(WorldModel world, ImageStore imageStore, Point pos, EventScheduler scheduler){
+         Crab crab = imageStore.createCrab("crab", pos, 5500, 0, imageStore.getImageList("crab"));
+         VirtualWorld.crab = crab;
+         world.addEntity(crab);
+         (crab).scheduleActions(scheduler, world, imageStore);
+   }
+
    private static void loadWorld(WorldModel world, String filename,
                                  ImageStore imageStore)
    {
@@ -182,10 +201,8 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         OctoEntity octo = imageStore.createOcto("octo", new Point(6,6),  imageStore.getImageList("octo"));
-         VirtualWorld.octo = octo;
-         world.addEntity(octo);
-//         world.removeEntity(octo);
+         virtualOcto(world, imageStore);
+         virtualRail1(world, imageStore);
       }
       catch (FileNotFoundException e)
       {
@@ -227,6 +244,6 @@ public final class VirtualWorld
    {
       parseCommandLine(args);
       PApplet.main(VirtualWorld.class);
-      PlayMusic.playMusic("C:\\Users\\koich\\OneDrive\\Documents\\GitHub\\Derailing\\music\\Marble.wav");
+      PlayMusic.playMusic("Marble.wav");
    }
 }

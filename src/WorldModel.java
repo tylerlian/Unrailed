@@ -289,16 +289,17 @@ final class WorldModel
    private boolean parseRail1(String[] properties,
                                ImageStore imageStore)
    {
-      if (properties.length == RAIL1_NUM_PROPERTIES)
+      if (properties.length == OBSTACLE_NUM_PROPERTIES)
       {
-         Point pt = new Point(Integer.parseInt(properties[RAIL1_COL]),
-                 Integer.parseInt(properties[RAIL1_ROW]));
-         Entity entity = imageStore.createRail1(properties[RAIL1_ID], pt,
+         Point pt = new Point(
+                 Integer.parseInt(properties[OBSTACLE_COL]),
+                 Integer.parseInt(properties[OBSTACLE_ROW]));
+         Entity entity = imageStore.createRail2(properties[OBSTACLE_ID], pt,
                  imageStore.getImageList(RAIL1_KEY));
-         this.tryAddEntity(entity);
+         this.tryAddEntity( entity);
       }
 
-      return properties.length == RAIL1_NUM_PROPERTIES;
+      return properties.length == OBSTACLE_NUM_PROPERTIES;
    }
 
 

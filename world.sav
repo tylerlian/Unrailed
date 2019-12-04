@@ -28,7 +28,6 @@ obstacle obstacle_13_22 13 22
 obstacle obstacle_14_23 14 23
 obstacle obstacle_14_24 14 24
 obstacle obstacle_11_21 11 21
-obstacle obstacle_27_25 27 25
 obstacle obstacle_28_25 28 25
 obstacle obstacle_29_26 29 26
 obstacle obstacle_26_26 26 26
@@ -36,8 +35,12 @@ obstacle obstacle_28_19 28 19
 obstacle obstacle_29_20 29 20
 obstacle obstacle_30_21 30 21
 obstacle obstacle_31_22 31 22
+obstacle obstacle_3_3 3 3
+obstacle obstacle_5_3 5 3
+obstacle obstacle_15_15 15 15
 trainstation trainstation_4_3 4 3
-rail2 rail2_4_4 4 4
+trainstation trainstation_16_15 16 15
+rail2 rail2_16_16 16 16
 fish fish_1 0 0 5
 fish fish_1 0 1 5
 fish fish_1 0 2 5
@@ -577,8 +580,6 @@ obstacle obstacle2 15 2
 obstacle obstacle2 16 2
 obstacle obstacle2 17 2
 obstacle obstacle2 18 2
-obstacle obstacle2 15 15
-obstacle obstacle2 16 15
 obstacle obstacle2 17 15
 obstacle obstacle2 32 15
 obstacle obstacle2 33 15

@@ -10,6 +10,7 @@ public class Train extends TraversingEntity {
     public Train(String id, Point position, List<PImage> images, int actionPeriod, int animationPeriod) {
         super(id, position, images, "train", actionPeriod, animationPeriod);
         this.closed = new LinkedList<>();
+        this.closed.add(new Point (4,4));
     }
 
     public void executeActivity(WorldModel world, ImageStore imageStore, EventScheduler scheduler) {

@@ -7,4 +7,8 @@ public class Rail1 extends Rail{
     public Rail1(String id, Point position, List<PImage> images){
         super(id, position, images, 0, "rail1");
     }
+
+    public String toString() {
+        return "(" + this.getPosition().getX() + "," + this.getPosition().getY() + ")";
+    }
 }
