@@ -7,11 +7,6 @@ import java.util.Optional;
 public abstract class PlayMusic
 {
 
-    private Optional<Clip> clipSong;
-
-    public PlayMusic(Optional<Clip> clipSong){
-        this.clipSong = Optional.empty();
-    }
     public static Optional<Clip> playMusic(String musicLocation, Optional<Clip> song) {
 
         try
@@ -41,9 +36,5 @@ public abstract class PlayMusic
             ex.printStackTrace();
         }
         return Optional.empty();
-    }
-
-    public Optional<Clip> getClipSong() {
-        return clipSong;
     }
 }

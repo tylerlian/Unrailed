@@ -122,7 +122,6 @@ public final class VirtualWorld
                octo.executeActivity(world, imageStore, scheduler);
                break;
             case CONTROL:
-               System.out.println("music");
                clip = PlayMusic.playMusic("Marble.wav", clip);
                break;
          }
