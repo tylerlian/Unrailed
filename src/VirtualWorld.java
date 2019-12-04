@@ -1,8 +1,10 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import javax.sound.sampled.Clip;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Optional;
 import java.util.Scanner;
 
 
@@ -53,6 +55,7 @@ public final class VirtualWorld
    private static Rail1 rail1;
    private static Crab crab;
    private EventScheduler scheduler;
+   private Optional<Clip> clip = Optional.empty();
 
    private long next_time;
 
@@ -117,6 +120,10 @@ public final class VirtualWorld
                break;
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
+               break;
+            case CONTROL:
+               System.out.println("music");
+               clip = PlayMusic.playMusic("Marble.wav", clip);
                break;
          }
          octo.move(world, dx, dy);
@@ -244,6 +251,5 @@ public final class VirtualWorld
    {
       parseCommandLine(args);
       PApplet.main(VirtualWorld.class);
-      PlayMusic.playMusic("Marble.wav");
    }
 }
