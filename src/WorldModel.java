@@ -29,12 +29,11 @@ final class WorldModel
    private static final int ATLANTIS_COL = 2;
    private static final int ATLANTIS_ROW = 3;
 
-   private static final String SGRASS_KEY = "seaGrass";
-   private static final int SGRASS_NUM_PROPERTIES = 5;
-   private static final int SGRASS_ID = 1;
-   private static final int SGRASS_COL = 2;
-   private static final int SGRASS_ROW = 3;
-   private static final int SGRASS_ACTION_PERIOD = 4;
+   private static final String RAIL1_KEY = "rail1";
+   private static final int RAIL1_NUM_PROPERTIES = 5;
+   private static final int RAIL1_ID = 1;
+   private static final int RAIL1_COL = 2;
+   private static final int RAIL1_ROW = 3;
 
    private static final String OCTO_KEY = "octo";
    private static final int OCTO_NUM_PROPERTIES = 7;
@@ -61,7 +60,6 @@ final class WorldModel
    private Background background[][];
    private Entity occupancy[][];
    public Set<Entity> entities;
-   private Sgrass seGrass;
 
    public WorldModel(int numRows, int numCols, Background defaultBackground)
    {
@@ -135,7 +133,7 @@ final class WorldModel
                     this.isOccupied(newPt))
             {
                Object o = getOccupant(newPt);
-               if( o instanceof Sgrass ){
+               if( o instanceof Rail1 ){
                   return Optional.of(newPt);
                }
             }
@@ -162,8 +160,8 @@ final class WorldModel
                return this.parseFish(properties, imageStore);
             case ATLANTIS_KEY:
                return this.parseAtlantis(properties, imageStore);
-            case SGRASS_KEY:
-               return this.parseSgrass(properties, imageStore);
+            case RAIL1_KEY:
+               return this.parseRail1(properties, imageStore);
          }
       }
 
@@ -250,20 +248,19 @@ final class WorldModel
       return properties.length == ATLANTIS_NUM_PROPERTIES;
    }
 
-   private boolean parseSgrass(String[] properties,
+   private boolean parseRail1(String[] properties,
                                ImageStore imageStore)
    {
-      if (properties.length == SGRASS_NUM_PROPERTIES)
+      if (properties.length == RAIL1_NUM_PROPERTIES)
       {
-         Point pt = new Point(Integer.parseInt(properties[SGRASS_COL]),
-                 Integer.parseInt(properties[SGRASS_ROW]));
-         Entity entity = imageStore.createSgrass(properties[SGRASS_ID], pt,
-                 Integer.parseInt(properties[SGRASS_ACTION_PERIOD]),
-                 imageStore.getImageList(SGRASS_KEY));
+         Point pt = new Point(Integer.parseInt(properties[RAIL1_COL]),
+                 Integer.parseInt(properties[RAIL1_ROW]));
+         Entity entity = imageStore.createRail1(properties[RAIL1_ID], pt,
+                 imageStore.getImageList(RAIL1_KEY));
          this.tryAddEntity(entity);
       }
 
-      return properties.length == SGRASS_NUM_PROPERTIES;
+      return properties.length == RAIL1_NUM_PROPERTIES;
    }
 
    private void tryAddEntity(Entity entity)

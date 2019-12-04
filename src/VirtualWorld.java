@@ -184,9 +184,10 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         OctoEntity octo = new OctoEntity("octo", new Point(4,4),  imageStore.getImageList("octo"), "octo", 0, 10);
+         OctoEntity octo = imageStore.createOcto("octo", new Point(4,4),  imageStore.getImageList("octo"));
          VirtualWorld.octo = octo;
          world.addEntity(octo);
+//         world.removeEntity(octo);
       }
       catch (FileNotFoundException e)
       {

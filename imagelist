@@ -13,7 +13,7 @@ train images/train01.bmp 255 255 255 0
 train images/train02.bmp 255 255 255 0
 train images/train03.bmp 255 255 255 0
 train images/train04.bmp 255 255 255 0
-sea images/sea.bmp 255 255 255 0
+grass images/grass.bmp 255 255 255 0
 octo images/s1.bmp 255 255 255 0
 octo images/s2.bmp 255 255 255 0
 octo images/s3.bmp 255 255 255 0
@@ -21,6 +21,8 @@ octo images/s4.bmp 255 255 255 0
 octo images/s5.bmp 255 255 255 0
 fish images/fish.bmp
 obstacle images/rock.bmp
+trainstation images/TrainStation.bmp
+rail2 images/rail2.bmp
 fish images/fish.bmp 255 255 255 0
 quake images/quake1.bmp 255 255 255 0
 quake images/quake2.bmp 255 255 255 0
@@ -28,6 +30,5 @@ quake images/quake3.bmp 255 255 255 0
 quake images/quake4.bmp 255 255 255 0
 quake images/quake5.bmp 255 255 255 0
 quake images/quake6.bmp 255 255 255 0
-bubbles images/bubbles.bmp
-seaGrass images/Seaweed1.bmp 255 255 255 0
+rail1 images/rail1.bmp 255 255 255 0
 background_default images/none.bmp

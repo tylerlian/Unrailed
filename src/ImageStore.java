@@ -159,20 +159,17 @@ final class ImageStore
       return new AtlantisFull(id, position, images, 0, 0, 0, 0);
    }
 
-   public OctoFull createOctoFull(String id, int resourceLimit,
-                                  Point position, int actionPeriod, int animationPeriod,
+   public OctoEntity createOcto(String id, Point position, List<PImage> images){
+      return new OctoEntity(id, position, images, "octo", 0, 0, 10);
+   }
+   public Rail2 createRail2(String id, Point position, List<PImage> images)
+   {
+      return new Rail2(id, position, images);
+   }
+   public TrainStation createTrainStation(String id, Point position,
                                   List<PImage> images)
    {
-      return new OctoFull(id, position, images,
-              resourceLimit, resourceLimit, actionPeriod, animationPeriod);
-   }
-
-   public OctoNotFull createOctoNotFull(String id, int resourceLimit, Point position,
-                                        int actionPeriod, int animationPeriod,
-                                        List<PImage> images)
-   {
-      return new OctoNotFull(id,position, images,
-              resourceLimit, 0, actionPeriod, animationPeriod);
+      return new TrainStation(id, position, images);
    }
 
    public Obstacle createObstacle(String id, Point position,
@@ -191,8 +188,8 @@ final class ImageStore
       return new Quake(QUAKE_ID, position, images, QUAKE_ACTION_PERIOD, QUAKE_ANIMATION_PERIOD);
    }
 
-   public Sgrass createSgrass(String id, Point position, int actionPeriod, List<PImage> images)
+   public Rail1 createRail1(String id, Point position, List<PImage> images)
    {
-      return new Sgrass(id, position, images, actionPeriod);
+      return new Rail1(id, position, images);
    }
 }
