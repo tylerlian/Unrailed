@@ -20,12 +20,12 @@ public final class VirtualWorld
 {
    private static final int TIMER_ACTION_PERIOD = 100;
 
-   private static final int VIEW_WIDTH = 640;
-   private static final int VIEW_HEIGHT = 480;
+   private static final int VIEW_WIDTH = 1300;
+   private static final int VIEW_HEIGHT = 720;
    private static final int TILE_WIDTH = 32;
    private static final int TILE_HEIGHT = 32;
-   private static final int WORLD_WIDTH_SCALE = 2;
-   private static final int WORLD_HEIGHT_SCALE = 2;
+   private static final int WORLD_WIDTH_SCALE = 1;
+   private static final int WORLD_HEIGHT_SCALE = 1;
 
    private static final int VIEW_COLS = VIEW_WIDTH / TILE_WIDTH;
    private static final int VIEW_ROWS = VIEW_HEIGHT / TILE_HEIGHT;
