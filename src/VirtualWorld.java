@@ -20,7 +20,7 @@ public final class VirtualWorld
 {
    private static final int TIMER_ACTION_PERIOD = 100;
 
-   private static final int VIEW_WIDTH = 1300;
+   private static final int VIEW_WIDTH = 720;
    private static final int VIEW_HEIGHT = 720;
    private static final int TILE_WIDTH = 32;
    private static final int TILE_HEIGHT = 32;
@@ -117,9 +117,6 @@ public final class VirtualWorld
             case SHIFT:
                octo.executeActivity(world, imageStore, scheduler);
                break;
-            case ENTER:
-               System.out.println("start");
-               break;
          }
          octo.move(world, dx, dy);
       }
@@ -138,7 +135,10 @@ public final class VirtualWorld
    }
 
    public void createCrabOnClick() {
-      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 0, 0, imageStore.getImageList("crab"));
+      Train train = imageStore.createTrain("train", new Point(2,2), 0, 0, imageStore.getImageList("train"));
+      world.addEntity(train);
+      (train).scheduleActions(scheduler, world, imageStore);
+      Crab crab = imageStore.createCrab("crab", getPressedPoint(), 5500, 0, imageStore.getImageList("crab"));
       world.addEntity(crab);
       (crab).scheduleActions(scheduler, world, imageStore);
    }
@@ -184,7 +184,7 @@ public final class VirtualWorld
       {
          Scanner in = new Scanner(new File(filename));
          world.load(in, imageStore);
-         OctoEntity octo = new OctoEntity("octo", new Point(0,1),  imageStore.getImageList("octo"), "octo", 0, 10);
+         OctoEntity octo = new OctoEntity("octo", new Point(4,4),  imageStore.getImageList("octo"), "octo", 0, 10);
          VirtualWorld.octo = octo;
          world.addEntity(octo);
       }
