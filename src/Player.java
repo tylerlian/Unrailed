@@ -1,9 +1,8 @@
+
 import processing.core.PImage;
 
 import java.util.List;
 import java.util.Optional;
-
-import static processing.core.PConstants.CODED;
 
 public class Player extends TraversingEntity {
 
@@ -34,8 +33,8 @@ public class Player extends TraversingEntity {
                 "tree");
 
         if (this.railCount > 0) {
-            Rail1 rail = imageStore.createRail1("rail1", this.getPosition(),  imageStore.getImageList("rail1"));
-            world.addEntity(rail);
+            Rail1 rail = imageStore.createRail1(this.getPosition(), imageStore,  RailType.RAIL1);
+            world.addEntity((Entity) rail);
             this.railCount -= 1;
             return;
         }
