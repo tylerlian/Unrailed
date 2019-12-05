@@ -1,4 +1,3 @@
-
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -53,7 +52,7 @@ public final class VirtualWorld
    private WorldView view;
    private static Player player;
    private static Train train;
-   private static Rail rail1;
+   private static Rail1 rail1;
    private static Thief thief;
    private EventScheduler scheduler;
    private Optional<Clip> clip = Optional.empty();
@@ -182,9 +181,9 @@ public final class VirtualWorld
    }
 
    private static void virtualRail1(WorldModel world, ImageStore imageStore){
-         Rail1 rail1 = imageStore.createRail1(new Point(4,4), imageStore, RailType.RAIL1);
+         Rail1 rail1 = imageStore.createRail1("rail1", new Point(4,4), imageStore.getImageList("rail1"));
          VirtualWorld.rail1 = rail1;
-         world.addEntity((Entity) rail1);
+         world.addEntity(rail1);
    }
 
    private static void virtualTrain(WorldModel world, ImageStore imageStore, EventScheduler scheduler){
