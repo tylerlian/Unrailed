@@ -122,7 +122,7 @@ public final class VirtualWorld
                player.executeActivity(world, imageStore, scheduler);
                break;
             case CONTROL:
-               clip = PlayMusic.playMusic("Marble.wav", clip);
+               clip = PlayMusic.playMusic("Lost.wav", clip);
                break;
          }
          player.move(world, dx, dy);
