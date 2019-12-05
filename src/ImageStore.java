@@ -1,3 +1,4 @@
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -76,7 +77,7 @@ final class ImageStore
       }
    }
 
-   private static List<PImage> getImages(Map<String, List<PImage>> images,
+   public static List<PImage> getImages(Map<String, List<PImage>> images,
                                   String key)
    {
       List<PImage> imgs = images.get(key);
@@ -121,9 +122,9 @@ final class ImageStore
    public Player createOcto(String id, Point position, List<PImage> images){
       return new Player(id, position, images, "octo", 0, 10);
    }
-   public Rail2 createRail2(String id, Point position, List<PImage> images)
+   public Rail2 createRail2(Point position, ImageStore images, RailType model)
    {
-      return new Rail2(id, position, images);
+      return (Rail2) RailFactory.buildRail(position, images, model);
    }
 
    public TrainStation createTrainStation(String id, Point position,
@@ -148,9 +149,10 @@ final class ImageStore
       return new Quake(QUAKE_ID, position, images, QUAKE_ACTION_PERIOD, QUAKE_ANIMATION_PERIOD);
    }
 
-   public Rail1 createRail1(String id, Point position, List<PImage> images)
+   public Rail1 createRail1(Point position, ImageStore images, RailType model)
    {
-      return new Rail1(id, position, images);
+
+      return (Rail1) RailFactory.buildRail(position, images, model);
    }
 
 }

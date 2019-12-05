@@ -105,43 +105,6 @@ final class WorldModel
       }
    }
 
-   public Optional<Point> findOpenAround(Point pos)
-   {
-      for (int dy = -1; dy <= 1; dy++)
-      {
-         for (int dx = -1; dx <= 1; dx++)
-         {
-            Point newPt = new Point(pos.getX() + dx, pos.getY() + dy);
-            if (this.withinBounds(newPt) &&
-                    !this.isOccupied(newPt))
-            {
-               return Optional.of(newPt);
-            }
-         }
-      }
-      return Optional.empty();
-   }
-
-   public Optional<Point> findTrackAround(Point pos)
-   {
-      for (int dy = -1; dy <= 1; dy++)
-      {
-         for (int dx = -1; dx <= 1; dx++)
-         {
-            Point newPt = new Point(pos.getX() + dx, pos.getY() + dy);
-            if (this.withinBounds(newPt) &&
-                    this.isOccupied(newPt))
-            {
-               Object o = getOccupant(newPt);
-               if( o instanceof Rail1 ){
-                  return Optional.of(newPt);
-               }
-            }
-         }
-      }
-      return Optional.empty();
-   }
-
    private boolean processLine(String line,
                                ImageStore imageStore)
    {
@@ -225,9 +188,9 @@ final class WorldModel
          Point pt = new Point(
                  Integer.parseInt(properties[OBSTACLE_COL]),
                  Integer.parseInt(properties[OBSTACLE_ROW]));
-         Entity entity = imageStore.createRail2(properties[OBSTACLE_ID], pt,
-                 imageStore.getImageList(RAIL2_KEY));
-         this.tryAddEntity( entity);
+         Entity entity = (Entity) imageStore.createRail2(pt, imageStore,
+                 RailType.RAIL2);
+         this.tryAddEntity(entity);
       }
 
       return properties.length == OBSTACLE_NUM_PROPERTIES;
@@ -271,8 +234,8 @@ final class WorldModel
          Point pt = new Point(
                  Integer.parseInt(properties[OBSTACLE_COL]),
                  Integer.parseInt(properties[OBSTACLE_ROW]));
-         Entity entity = imageStore.createRail2(properties[OBSTACLE_ID], pt,
-                 imageStore.getImageList(RAIL1_KEY));
+         Entity entity = (Entity) imageStore.createRail1(pt, imageStore,
+                 RailType.RAIL1);
          this.tryAddEntity( entity);
       }
 
