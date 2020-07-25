@@ -1,4 +1,4 @@
-===UNRAILED===
+# UNRAILED
 by Tyler Lian & Koichi Kodama
 =============================
 Instructions:
@@ -10,7 +10,6 @@ Once the train has reached the next station, you win the game, but be careful th
 are goblins in the area who are trying to steal the wood so you can not build the rails,
 so build fast.
 
-=================================================================================================
 Controls:
 
 Movement: Use the arrow keys to move up, down, left, and right.
