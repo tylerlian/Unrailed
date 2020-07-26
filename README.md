@@ -1,7 +1,8 @@
 # UNRAILED
 by Tyler Lian & Koichi Kodama
 -------------------------------------------------------------------------------------------------
-Instructions:
+
+## Instructions:
 
 You play as Megaman who is trying to lead the train from one station to another.
 To create the path for the train, you need to obtain wood from the trees in the level
@@ -10,7 +11,11 @@ Once the train has reached the next station, you win the game, but be careful th
 are goblins in the area who are trying to steal the wood so you can not build the rails,
 so build fast.
 
-Controls:
+-------------------------------------------------------------------------------------------------
+
+## Controls:
+
+-------------------------------------------------------------------------------------------------
 
 Movement: Use the arrow keys to move up, down, left, and right.
 
